@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>أدعية خاصة بالمناسبات | درر الذكر والتسبيح</title>
+   <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Reem+Kufi:wght@400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+    	/* تعريف خط Scheherazade New */
+@font-face {
+  font-family: 'Scheherazade New';
+  src: url('assets/fonts/ScheherazadeNew-Regular.ttf') format('truetype'),
+       url('assets/fonts/ScheherazadeNew-Medium.ttf') format('truetype'),
+       url('assets/fonts/ScheherazadeNew-Bold.ttf') format('truetype'),
+       url('assets/fonts/ScheherazadeNew-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* تعريف خط Amiri */
+@font-face {
+  font-family: 'Amiri';
+  src: url('assets/fonts/Amiri-Regular.ttf') format('truetype'),
+       url('assets/fonts/Amiri-Bold.ttf') format('truetype'),
+       url('assets/fonts/Amiri-Italic.ttf') format('truetype'),
+       url('assets/fonts/Amiri-BoldItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* تعريف خط Aref Ruqaa */
+@font-face {
+  font-family: 'Aref Ruqaa';
+  src: url('assets/fonts/ArefRuqaa-Regular.ttf') format('truetype'),
+       url('assets/fonts/ArefRuqaa-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* تعريف خط Reem Kufi */
+@font-face {
+  font-family: 'Reem Kufi';
+  src: url('assets/fonts/ReemKufi-VariableFont_wght.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-Bold.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-Medium.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-Regular.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+        :root {
+            --primary-light: #E0F2FE;
+            --secondary-light: #DCFCE7;
+            --accent-light: #3b82f6;
+            --text-light: #1e293b;
+            --bg-light: #f8fafc;
+            --card-light: #ffffff;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+
+            --primary-dark: #0F172A;
+            --secondary-dark: #1E293B;
+            --accent-dark: #FFD700;
+            --text-dark: #e2e8f0;
+            --bg-dark: #0f172a;
+            --card-dark: #1e293b;
+            --shadow-dark: rgba(0, 0, 0, 0.5);
+
+            --primary: var(--primary-light);
+            --secondary: var(--secondary-light);
+            --accent: var(--accent-light);
+            --text-color: var(--text-light);
+            --bg-color: var(--bg-light);
+            --card-color: var(--card-light);
+            --shadow-color: var(--shadow-light);
+
+            --transition-speed: 0.3s;
+            --border-radius: 15px;
+        }
+
+        .dark-mode {
+            --primary: var(--primary-dark);
+            --secondary: var(--secondary-dark);
+            --accent: var(--accent-dark);
+            --text-color: var(--text-dark);
+            --bg-color: var(--bg-dark);
+            --card-color: var(--card-dark);
+            --shadow-color: var(--shadow-dark);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color var(--transition-speed), color var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Scheherazade New', 'Amiri', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* تأثير الخلفية */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .light-particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+            animation: float 15s infinite linear;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100px) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* النافبار */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: var(--card-color);
+            box-shadow: 0 4px 15px var(--shadow-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        .nav-links a.active {
+            background-color: var(--accent);
+            color: var(--card-color);
+        }
+
+        .nav-links a.active::after {
+            width: 0;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--primary);
+            transform: rotate(30deg);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* الهيرو سيكشن */
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-family: 'Aref Ruqaa', serif;
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent);
+            border-radius: 3px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1rem;
+            border-radius: var(--border-radius);
+            border: none;
+            background-color: var(--card-color);
+            color: var(--text-color);
+            font-size: 1rem;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            font-family: 'Amiri', serif;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 5px 25px var(--shadow-color);
+            transform: translateY(-2px);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        /* أقسام المناسبات */
+        .occasions-section {
+            padding: 2rem 5%;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-family: 'Aref Ruqaa', serif;
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background-color: var(--accent);
+            border-radius: 3px;
+        }
+
+        .occasions-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .occasion-card {
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 8px 8px 16px var(--shadow-color), 
+                -8px -8px 16px rgba(255, 255, 255, 0.1);
+    transition: all 0.4s;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.occasion-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 12px 12px 20px var(--shadow-color), 
+                -12px -12px 20px rgba(255, 255, 255, 0.1);
+}
+
+.card-img {
+    height: 120px; /* تقليل ارتفاع الصورة إلى 120px أو حسب الحاجة */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--accent); /* إضافة خلفية في حالة عدم وجود صورة */
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    color: white;
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.occasion-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-family: 'Aref Ruqaa', serif;
+    color: var(--accent);
+    text-align: center;
+}
+
+.card-desc {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.card-btn {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--accent);
+    color: var(--card-color);
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    text-decoration: none;
+}
+
+.card-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+        /* قسم الأدعية المميزة */
+        .featured-duas {
+            padding: 4rem 5%;
+            background-color: var(--primary);
+            border-radius: var(--border-radius);
+            margin: 2rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-duas::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://picsum.photos/id/1048/1000/600') center/cover;
+            opacity: 0.07;
+            z-index: 0;
+        }
+
+        .featured-duas-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .featured-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .dua-card {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px var(--shadow-color);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .dua-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px var(--shadow-color);
+        }
+
+        .dua-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--accent);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+
+        .dua-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            font-family: 'Aref Ruqaa', serif;
+        }
+
+        .dua-text {
+            font-size: 1.3rem;
+            line-height: 2;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            font-family: 'Amiri', serif;
+        }
+
+        .dua-source {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-style: italic;
+            text-align: left;
+            display: block;
+            margin-top: 1rem;
+        }
+
+        .dua-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--accent);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Reem Kufi', sans-serif;
+        }
+
+        .action-btn:hover {
+            background-color: var(--accent);
+            color: var(--card-color);
+        }
+
+        /* قسم التصنيفات */
+        .categories-section {
+            padding: 2rem 5%;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .category-card {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 8px 8px 16px var(--shadow-color), 
+                        -8px -8px 16px rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.6s;
+        }
+
+        .category-card:hover::before {
+            top: 100%;
+            left: 100%;
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .category-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-family: 'Aref Ruqaa', serif;
+        }
+
+        .category-count {
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+
+        /* قسم الاستماع */
+        .audio-section {
+            padding: 3rem 5%;
+            background-color: var(--primary);
+            border-radius: var(--border-radius);
+            margin: 2rem 5%;
+            position: relative;
+        }
+
+        .audio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .audio-card {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: 0 8px 20px var(--shadow-color);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .audio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px var(--shadow-color);
+        }
+
+        .audio-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            font-family: 'Aref Ruqaa', serif;
+            text-align: center;
+        }
+
+        .audio-player {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .audio-card .card-btn {
+            margin-top: 1rem;
+        }
+
+        /* الفوتر */
+        .footer {
+            background-color: var(--card-color);
+            padding: 3rem 5% 1rem;
+            margin-top: 3rem;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            box-shadow: 0 -5px 15px var(--shadow-color);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .footer-about p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            font-family: 'Aref Ruqaa', serif;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(-5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--text-color);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            color: var(--card-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--primary);
+            font-size: 0.9rem;
+        }
+
+        /* زر العودة للأعلى */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            color: var(--card-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            z-index: 100;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--shadow-color);
+        }
+
+        /* تأثيرات إضافية */
+        .glow-effect {
+            position: relative;
+        }
+
+        .glow-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0 20px var(--accent);
+            opacity: 0;
+            transition: opacity 0.3s;
+            border-radius: inherit;
+            z-index: -1;
+        }
+
+        .glow-effect:hover::after {
+            opacity: 0.3;
+        }
+
+        /* تأثير الزجاج */
+        .glass-effect {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* التحميل المتأخر للصور */
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .lazy-load.loaded {
+            opacity: 1;
+        }
+
+        /* التوافقية مع الأجهزة المحمولة */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--card-color);
+                padding: 1rem;
+                box-shadow: 0 5px 15px var(--shadow-color);
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .occasions-container,
+            .categories-grid,
+            .audio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* تحسينات الأداء */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        
+        
+        
+        
+        /* CSS for an elegant and professional popup modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scrolling if content is too tall */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    backdrop-filter: blur(8px); /* Blur effect for a modern look */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    margin: auto;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+    position: relative;
+}
+
+.modal-content h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4c4c6d;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.modal-content p:last-child {
+    margin-bottom: 0;
+}
+
+.modal-content .close {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #888;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-content .close:hover {
+    color: #ff5e5e;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Add responsive design for smaller screens */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 15px 20px;
+        max-width: 90%;
+    }
+
+    .modal-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content p {
+        font-size: 0.9rem;
+    }
+
+    .modal-content .close {
+        font-size: 1.2rem;
+    }
+}
+.logo-img {
+        width: 40px;  /* يمكنك تغيير هذا الحجم حسب الحاجة */
+        height: auto; /* لضمان الحفاظ على النسبة بين العرض والارتفاع */
+    }
+
+
+     /* تنسيق خاص للشاشات الصغيرة (الهاتف) */
+@media (max-width: 768px) {
+    .dua-actions {
+        display: flex;
+        flex-wrap: wrap; /* السماح للأزرار بالانتقال إلى سطر جديد */
+        gap: 10px; /* المسافة بين الأزرار */
+        justify-content: center; /* توسيط الأزرار في المنتصف */
+    }
+
+    .action-btn {
+        display: flex;
+        justify-content: center; /* توسيط النص أفقياً */
+        align-items: center;     /* توسيط النص عموديًا */
+        padding: 10px 20px;
+        min-width: 120px; /* تحديد الحد الأدنى لعرض الزر */
+        text-align: center; /* التأكد من أن النص في الزر في المنتصف */
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- تأثير الخلفية -->
+    <div class="background-animation" id="bgAnimation"></div>
+
+    <!-- النافبار -->
+<!-- النافبار -->
+<nav class="navbar">
+    <a href="index.html" class="logo">
+    <img src="icn/Logo.png" alt="درر الذكر والتسبيح" class="logo-img">
+    <span>درر الذكر والتسبيح</span>
+</a>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html"><i class="fas fa-home"></i> الصفحة الرئيسية</a>
+        <a href="azkar.html"><i class="fas fa-sun"></i> أذكار الصباح والمساء</a>
+        <a href="daily-duas.html"><i class="fas fa-book-open"></i> الأدعية اليومية</a>
+        <a href="occasion-duas.html" class="active"><i class="fas fa-calendar-alt"></i> أدعية خاصة بالمناسبات</a>
+        <a href="auth-azkar.html"><i class="fas fa-pray"></i> الأذكار المأثورة</a>
+        <a href="listen-azkar.html"><i class="fas fa-headphones"></i> استماع إلى الأذكار</a>
+    </div>
+    <div class="navbar-actions">
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-sun"></i>
+        </button>
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
+
+    <!-- الهيرو سيكشن -->
+    <section class="hero">
+        <h1>أدعية خاصة بالمناسبات</h1>
+        <p>مجموعة مختارة من الأدعية المأثورة الخاصة بمختلف المناسبات الإسلامية والأوقات المباركة، لتكون عونًا لك في التقرب إلى الله تعالى في هذه الأوقات الفضيلة.</p>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="ابحث عن دعاء معين...">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+    </section>
+
+    <!-- قسم مناسبات رئيسية -->
+<section class="occasions-section">
+    <h2 class="section-title">المناسبات الإسلامية</h2>
+    <div class="occasions-container">
+        
+        <!-- بطاقة رمضان -->
+<div class="occasion-card glow-effect">
+    <div class="card-img">
+        <div class="card-overlay">رمضان الكريم</div>
+    </div>
+    <div class="card-content">
+        <h3 class="card-title">أدعية شهر رمضان المبارك</h3>
+        <p class="card-desc">مجموعة من الأدعية المأثورة الخاصة بشهر رمضان المبارك، شهر الصيام والقرآن، وفضل الدعاء فيه عظيم.</p>
+        <a href="#" class="card-btn" onclick="openModal('ramadan-modal')">عرض الأدعية</a>
+    </div>
+</div>
+
+<!-- بطاقة العشر الأواخر من رمضان -->
+<div class="occasion-card glow-effect">
+    <div class="card-img">
+        <div class="card-overlay">العشر الأواخر</div>
+    </div>
+    <div class="card-content">
+        <h3 class="card-title">أدعية العشر الأواخر من رمضان</h3>
+        <p class="card-desc">أدعية مخصوصة للعشر الأواخر من رمضان التي فيها ليلة القدر، وهي خير من ألف شهر.</p>
+        <a href="#" class="card-btn" onclick="openModal('last-ten-modal')">عرض الأدعية</a>
+    </div>
+</div>
+
+<!-- بطاقة عيد الفطر -->
+<div class="occasion-card glow-effect">
+    <div class="card-img">
+        <div class="card-overlay">عيد الفطر</div>
+    </div>
+    <div class="card-content">
+        <h3 class="card-title">أدعية عيد الفطر المبارك</h3>
+        <p class="card-desc">الأدعية المأثورة في يوم عيد الفطر المبارك، وما يقال في صلاة العيد وبعدها من الأذكار.</p>
+        <a href="#" class="card-btn" onclick="openModal('eid-modal')">عرض الأدعية</a>
+    </div>
+</div>
+
+<!-- بطاقة يوم عرفة -->
+<div class="occasion-card glow-effect">
+    <div class="card-img">
+        <div class="card-overlay">يوم عرفة</div>
+    </div>
+    <div class="card-content">
+        <h3 class="card-title">أدعية يوم عرفة</h3>
+        <p class="card-desc">يوم عرفة من أفضل أيام السنة، والدعاء فيه مستجاب، وهذه مجموعة من الأدعية المأثورة في هذا اليوم العظيم.</p>
+        <a href="#" class="card-btn" onclick="openModal('arafa-modal')">عرض الأدعية</a>
+    </div>
+</div>
+
+<!-- بطاقة عيد الأضحى -->
+<div class="occasion-card glow-effect">
+    <div class="card-img">
+        <div class="card-overlay">عيد الأضحى</div>
+    </div>
+    <div class="card-content">
+        <h3 class="card-title">أدعية عيد الأضحى المبارك</h3>
+        <p class="card-desc">الأدعية المشروعة في عيد الأضحى المبارك، وما يقال عند التكبير وذبح الأضحية وغيرها من الشعائر.</p>
+        <a href="#" class="card-btn" onclick="openModal('sacrifice-modal')">عرض الأدعية</a>
+    </div>
+</div>
+
+<!-- بطاقة الحج والعمرة -->
+<div class="occasion-card glow-effect">
+    <div class="card-img">
+        <div class="card-overlay">الحج والعمرة</div>
+    </div>
+    <div class="card-content">
+        <h3 class="card-title">أدعية الحج والعمرة</h3>
+        <p class="card-desc">مجموعة شاملة من الأدعية التي يحتاجها الحاج والمعتمر في مناسك الحج والعمرة، من الإحرام حتى الوداع.</p>
+        <a href="#" class="card-btn" onclick="openModal('hajj-modal')">عرض الأدعية</a>
+    </div>
+</div>
+
+</section>
+
+<!-- نافذة منبثقة لشهر رمضان -->
+<div id="ramadan-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('ramadan-modal')">&times;</span>
+        <h3 class="modal-title">أدعية شهر رمضان المبارك</h3>
+        <p>اللهم بلغنا رمضان، ووفقنا فيه للطاعات، وتقبل منا صيامنا وقيامنا.</p>
+        <p>اللهم اجعل رمضان شهر فرج ونعمة على الأمة الإسلامية.</p>
+        <p>اللهم اجعلنا من عتقاء شهر رمضان.</p>
+        <p>اللهم اجعلنا من الذين يسيرون على صراطك المستقيم في رمضان.</p>
+        <p>اللهم اجعلنا من أهل الجنة في هذا الشهر الكريم.</p>
+        <p>اللهم اجعلنا من المقبولين في هذا الشهر الفضيل.</p>
+        <p>اللهم اجعلنا من الذين يذوقون حلاوة الإيمان في رمضان.</p>
+        <p>اللهم اغفر لنا ولآبائنا وأمهاتنا في هذا الشهر المبارك.</p>
+        <p>اللهم اجعلنا من الذين يسهرون لقيام رمضان.</p>
+        <p>اللهم تقبل منا أعمالنا الصالحة في رمضان.</p>
+    </div>
+</div>
+
+<!-- نافذة منبثقة للعشر الأواخر من رمضان -->
+<div id="last-ten-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('last-ten-modal')">&times;</span>
+        <h3 class="modal-title">أدعية العشر الأواخر من رمضان</h3>
+        <p>اللهم بلغنا ليلة القدر، واجعلها ليلة خير وبركة.</p>
+        <p>اللهم اجعلنا من الفائزين في ليلة القدر.</p>
+        <p>اللهم اجعلنا من المغفور لهم في العشر الأواخر.</p>
+        <p>اللهم أعتق رقابنا من النار في هذه الأيام المباركة.</p>
+        <p>اللهم اجعلنا من الذين يحيون ليلة القدر بالإيمان والعمل الصالح.</p>
+        <p>اللهم اجعلنا من الذين يغفر لهم في العشر الأواخر من رمضان.</p>
+        <p>اللهم اجعلنا من الذين يكثرون من الدعاء والذكر في العشر الأواخر.</p>
+        <p>اللهم تقبل منا صيامنا وقيامنا في العشر الأواخر.</p>
+        <p>اللهم اجعلنا من الذين يحصلون على الرحمة والمغفرة في هذه الأيام الفضيلة.</p>
+        <p>اللهم اجعل العشر الأواخر فرصة للتقرب إليك بالطاعات.</p>
+    </div>
+</div>
+
+<!-- نافذة منبثقة لعيد الفطر -->
+<div id="eid-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('eid-modal')">&times;</span>
+        <h3 class="modal-title">أدعية عيد الفطر المبارك</h3>
+        <p>اللهم اجعل عيدنا هذا عيد فرح وسعادة، وتقبل منا صالح الأعمال.</p>
+        <p>اللهم اجعلنا من أهل الجنة في هذا اليوم المبارك.</p>
+        <p>اللهم اجعل عيدنا هذا عيد رحمة ومغفرة لجميع المسلمين.</p>
+        <p>اللهم اجعل هذا العيد بدايةً للخير في حياتنا.</p>
+        <p>اللهم تقبل منا عباداتنا في رمضان وأعد علينا العيد بالخير.</p>
+        <p>اللهم اجعل عيدنا هذا عيد الفرح والسرور لأمة محمد صلى الله عليه وسلم.</p>
+        <p>اللهم اجعلنا من الذين يسيرون على صراطك المستقيم.</p>
+        <p>اللهم اجعل هذا العيد عيد مبارك يعم الخير علينا وعلى المسلمين.</p>
+        <p>اللهم ارفع البلاء عن الأمة الإسلامية في هذا اليوم المبارك.</p>
+        <p>اللهم اجعلنا من أهل الرضا والقبول في هذا اليوم العظيم.</p>
+    </div>
+</div>
+
+<!-- نافذة منبثقة ليوم عرفة -->
+<div id="arafa-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('arafa-modal')">&times;</span>
+        <h3 class="modal-title">أدعية يوم عرفة</h3>
+        <p>اللهم اجعلنا من عتقائك في يوم عرفة، واغفر لنا ذنوبنا.</p>
+        <p>اللهم اجعل يوم عرفة يوم إجابة للدعاء.</p>
+        <p>اللهم اجعلنا من الذين يرفعون أيدهم في يوم عرفة وتستجيب لهم.</p>
+        <p>اللهم اعتق رقابنا من النار في هذا اليوم الفضيل.</p>
+        <p>اللهم ارزقنا عرفة في رحاب بيتك الحرام.</p>
+        <p>اللهم اجعلنا من الذين يسيرون على صراطك المستقيم في يوم عرفة.</p>
+        <p>اللهم اجعل هذا اليوم يوم مغفرة ورحمة.</p>
+        <p>اللهم تقبل منا أعمالنا الصالحة في هذا اليوم المبارك.</p>
+        <p>اللهم اجعل يوم عرفة يوم فوز للعباد بالطاعات والعبادة.</p>
+        <p>اللهم اجعل يوم عرفة بداية لفتح أبواب الجنة لنا ولأهلنا.</p>
+    </div>
+</div>
+
+<!-- نافذة منبثقة لعيد الأضحى -->
+<div id="sacrifice-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('sacrifice-modal')">&times;</span>
+        <h3 class="modal-title">أدعية عيد الأضحى المبارك</h3>
+        <p>اللهم تقبل منا ومن جميع المسلمين صالح الأعمال.</p>
+        <p>اللهم اجعلنا من الذين يضحون بدمائهم وأموالهم في سبيلك.</p>
+        <p>اللهم اجعل عيدنا هذا عيد فرح وسلام على الأمة الإسلامية.</p>
+        <p>اللهم اجعلنا من أهل الرضا والقبول في هذا اليوم المبارك.</p>
+        <p>اللهم تقبل منا قرباننا واغفر لنا ولأهلنا.</p>
+        <p>اللهم اجعل عيد الأضحى عيد بركة وسعادة على الأمة الإسلامية.</p>
+        <p>اللهم اجعلنا من الذين يعيدون في طاعتك.</p>
+        <p>اللهم اجعل عيد الأضحى عيدًا للسعادة والفرح على المسلمين جميعًا.</p>
+        <p>اللهم اجعلنا من الذين يكثرون من الذكر والشكر في عيد الأضحى.</p>
+        <p>اللهم تقبل منا جميع الطاعات في عيد الأضحى المبارك.</p>
+    </div>
+</div>
+
+<!-- نافذة منبثقة للحج والعمرة -->
+<div id="hajj-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('hajj-modal')">&times;</span>
+        <h3 class="modal-title">أدعية الحج والعمرة</h3>
+        <p>اللهم اجعل حجنا حجًا مبرورًا وسعيًا مشكورًا.</p>
+        <p>اللهم اغفر للحجاج والمعتمرين، وارزقنا حجًا وعمرة.</p>
+        <p>اللهم اجعلنا من أهل البيت الحرام في هذا العام.</p>
+        <p>اللهم اجعل حجنا هذا خالصًا لوجهك الكريم.</p>
+        <p>اللهم اجعلنا من الذين يجتمعون في بيتك الحرام في هذا العام.</p>
+        <p>اللهم اجعلنا من أهل المغفرة في هذا الحج المبارك.</p>
+        <p>اللهم تقبل منا الدعاء في مكة المكرمة.</p>
+        <p>اللهم اجعلنا من الذين يسيرون على صراطك المستقيم.</p>
+        <p>اللهم اجعل حجنا هذا بداية للرحمة والمغفرة في حياتنا.</p>
+        <p>اللهم اجعل حجنا آخر حج لنا، واجعلنا من أهل الجنة.</p>
+    </div>
+</div>
+
+
+
+
+    <!-- قسم الأدعية المميزة -->
+    <section class="featured-duas">
+        <div class="featured-duas-container">
+            <h2 class="section-title featured-title">أدعية مختارة للمناسبات</h2>
+            
+            <div class="dua-card">
+                <h3 class="dua-title">دعاء ليلة القدر</h3>
+                <p class="dua-text">اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي</p>
+                <span class="dua-source">رواه الترمذي وابن ماجه وأحمد</span>
+                <div class="dua-actions">
+                    <button class="action-btn"><i class="fas fa-copy"></i> نسخ</button>
+                    <button class="action-btn"><i class="fas fa-share-alt"></i> مشاركة</button>
+                   <button class="action-btn" data-audio="occasion-duas/audio1.mp3">
+            <i class="fas fa-volume-up" class="icon"></i> استماع
+        </button>
+                </div>
+            </div>
+            
+            <div class="dua-card">
+                <h3 class="dua-title">دعاء يوم عرفة</h3>
+                <p class="dua-text">خَيْرُ الدُّعَاءِ دُعَاءُ يَوْمِ عَرَفَةَ، وَخَيْرُ مَا قُلْتُ أَنَا وَالنَّبِيُّونَ مِنْ قَبْلِي: لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ</p>
+                <span class="dua-source">رواه الترمذي</span>
+                <div class="dua-actions">
+                    <button class="action-btn"><i class="fas fa-copy"></i> نسخ</button>
+                    <button class="action-btn"><i class="fas fa-share-alt"></i> مشاركة</button>
+                      <button class="action-btn" data-audio="occasion-duas/audio5.mp3">
+            <i class="fas fa-volume-up" class="icon"></i> استماع
+        </button>
+                </div>
+            </div>
+            
+            <div class="dua-card">
+                <h3 class="dua-title">دعاء الإفطار في رمضان</h3>
+                <p class="dua-text">ذَهَبَ الظَّمَأُ، وَابْتَلَّتِ الْعُرُوقُ، وَثَبَتَ الْأَجْرُ إِنْ شَاءَ اللَّهُ</p>
+                <span class="dua-source">رواه أبو داود</span>
+                <div class="dua-actions">
+                    <button class="action-btn"><i class="fas fa-copy"></i> نسخ</button>
+                    <button class="action-btn"><i class="fas fa-share-alt"></i> مشاركة</button>
+                    <button class="action-btn" data-audio="occasion-duas/audio6.mp3">
+            <i class="fas fa-volume-up" class="icon"></i> استماع
+        </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- قسم الاستماع -->
+<section class="audio-section">
+    <h2 class="section-title">استمع إلى الأدعية</h2>
+    <div class="audio-grid">
+        <div class="audio-card glass-effect">
+            <h3 class="audio-title">دعاء ليلة القدر</h3>
+            <audio controls class="audio-player">
+                <source src="occasion-duas/audio1.mp3" type="audio/mpeg">
+                متصفحك لا يدعم تشغيل الصوت
+            </audio>
+            <a href="occasion-duas/audio1.mp3" class="card-btn" download>تحميل الملف الصوتي</a>
+        </div>
+        
+        <div class="audio-card glass-effect">
+            <h3 class="audio-title">دعاء يوم عرفة</h3>
+            <audio controls class="audio-player">
+                <source src="occasion-duas/audio2.mp3" type="audio/mpeg">
+                متصفحك لا يدعم تشغيل الصوت
+            </audio>
+            <a href="occasion-duas/audio2.mp3" class="card-btn" download>تحميل الملف الصوتي</a>
+        </div>
+        
+        <div class="audio-card glass-effect">
+            <h3 class="audio-title">تكبيرت العيد</h3>
+            <audio controls class="audio-player">
+                <source src="occasion-duas/audio3.mp3" type="audio/mpeg">
+                متصفحك لا يدعم تشغيل الصوت
+            </audio>
+            <a href="occasion-duas/audio3.mp3" class="card-btn" download>تحميل الملف الصوتي</a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">
+                    <i class="fas fa-moon"></i> موقع الأذكار
+                </a>
+                <p>موقع متخصص في جمع الأذكار والأدعية المأثورة عن النبي صلى الله عليه وسلم، مصنفة حسب المناسبات والأوقات، لتكون عونًا للمسلم في حياته اليومية.</p>
+                
+            </div>
+            
+            <div class="footer-links-container">
+    <h3 class="footer-title">روابط سريعة</h3>
+    <ul class="footer-links">
+        <li><a href="index.html"><i class="fas fa-chevron-left"></i> الصفحة الرئيسية</a></li>
+        <li><a href="azkar.html"><i class="fas fa-chevron-left"></i> أذكار الصباح والمساء</a></li>
+        <li><a href="daily-duas.html"><i class="fas fa-chevron-left"></i> الأدعية اليومية</a></li>
+        <li><a href="occasion-duas.html"><i class="fas fa-chevron-left"></i> أدعية خاصة بالمناسبات</a></li>
+        <li><a href="auth-azkar.html"><i class="fas fa-chevron-left"></i> الأذكار المأثورة</a></li>
+    </ul>
+</div>
+
+            
+            
+            
+           <div class="footer-contact">
+    <h3 class="footer-title">تواصل معنا</h3>
+    <ul class="footer-links">
+        <li><a href="mailto:ttyy5468@gmail.com"><i class="fas fa-envelope"></i> ttyy5468@gmail.com</a></li>
+        <li><a href="tel:+967770375454"><i class="fas fa-phone"></i> +967 770375454</a></li>
+        <li><a href="#"><i class="fas fa-map-marker-alt"></i> اليمن محافظة إب</a></li>
+    </ul>
+</div>
+
+        </div>
+        
+        <div class="copyright">
+            <p>جميع الحقوق محفوظة &copy; 2025 موقع درر الذكر والتسبيح</p>
+
+        </div>
+    </footer>
+
+    <!-- زر العودة للأعلى -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // إضافة تأثير الخلفية
+        function createLightParticles() {
+            const bgAnimation = document.getElementById('bgAnimation');
+            const particleCount = 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'light-particle';
+                
+                // تعيين موقع عشوائي
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const size = Math.random() * 5 + 2;
+                const duration = Math.random() * 15 + 10;
+                const delay = Math.random() * 5;
+                
+                particle.style.left = `${posX}%`;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                bgAnimation.appendChild(particle);
+            }
+        }
+        
+        // تبديل الوضع المظلم/المضيء
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('themeToggle');
+            
+            body.classList.toggle('dark-mode');
+            
+            // تغيير أيقونة الزر
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        
+        // فتح/إغلاق القائمة في الهواتف
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+        
+        // زر العودة للأعلى
+        function handleBackToTop() {
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // تحميل متأخر للصور
+        function lazyLoadImages() {
+            const lazyImages = document.querySelectorAll('.lazy-load');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.classList.add('loaded');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(img => {
+                    imageObserver.observe(img);
+                });
+            } else {
+                // Fallback
+                lazyImages.forEach(img => {
+                    img.classList.add('loaded');
+                });
+            }
+        }
+        
+        // تأثيرات إضافية للبطاقات
+        function addCardEffects() {
+            const cards = document.querySelectorAll('.occasion-card, .category-card, .dua-card, .audio-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                });
+            });
+        }
+        
+        // وظيفة نسخ الدعاء
+        function setupCopyButtons() {
+            const copyButtons = document.querySelectorAll('.action-btn:first-child');
+            
+            copyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const duaText = button.closest('.dua-card').querySelector('.dua-text').textContent;
+                    
+                    navigator.clipboard.writeText(duaText).then(() => {
+                        // تغيير النص مؤقتًا للإشارة إلى النجاح
+                        const originalText = button.innerHTML;
+                        button.innerHTML = '<i class="fas fa-check"></i> تم النسخ';
+                        
+                        setTimeout(() => {
+                            button.innerHTML = originalText;
+                        }, 2000);
+                    });
+                });
+            });
+        }
+        
+        // وظيفة المشاركة
+        function setupShareButtons() {
+            const shareButtons = document.querySelectorAll('.action-btn:nth-child(2)');
+            
+            shareButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const duaTitle = button.closest('.dua-card').querySelector('.dua-title').textContent;
+                    const duaText = button.closest('.dua-card').querySelector('.dua-text').textContent;
+                    
+                    if (navigator.share) {
+                        navigator.share({
+                            title: duaTitle,
+                            text: duaText,
+                            url: window.location.href
+                        });
+                    } else {
+                        alert('المشاركة غير متاحة في متصفحك');
+                    }
+                });
+            });
+        }
+        
+        // وظيفة البحث
+        function setupSearch() {
+            const searchInput = document.querySelector('.search-input');
+            const searchBtn = document.querySelector('.search-btn');
+            
+            searchBtn.addEventListener('click', performSearch);
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+            
+            function performSearch() {
+                const searchTerm = searchInput.value.trim();
+                if (searchTerm.length > 0) {
+                    // يمكن تنفيذ البحث هنا
+                    alert(`جاري البحث عن: ${searchTerm}`);
+                }
+            }
+        }
+        
+        // استعادة الوضع (مظلم/مضيء) من التخزين المحلي
+        function restoreTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggle = document.getElementById('themeToggle');
+            
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        }
+        
+        // تنفيذ الوظائف عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            createLightParticles();
+            restoreTheme();
+            handleBackToTop();
+            lazyLoadImages();
+            addCardEffects();
+            setupCopyButtons();
+            setupShareButtons();
+            setupSearch();
+            
+            // إضافة مستمعي الأحداث
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+            document.getElementById('menuToggle').addEventListener('click', toggleMenu);
+            
+            // تأثيرات إضافية
+            // تفعيل تحريك البطاقات عند التمرير
+            const animatedElements = document.querySelectorAll('.occasion-card, .dua-card, .category-card, .audio-card');
+            
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                animatedElements.forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    observer.observe(el);
+                });
+            }
+        });
+        
+        
+        
+        // فتح النافذة المنبثقة
+function openModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = "block";
+}
+
+// إغلاق النافذة المنبثقة
+function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = "none";
+}
+
+// إغلاق النافذة عند النقر خارجها
+window.onclick = function(event) {
+    var modal = document.querySelectorAll('.modal');
+    modal.forEach(function(m) {
+        if (event.target == m) {
+            m.style.display = "none";
+        }
+    });
+}
+
+
+    </script>
+    <script>
+        // الحصول على جميع الأزرار
+        const buttons = document.querySelectorAll('.action-btn');
+
+        // إضافة حدث لكل زر
+        buttons.forEach(button => {
+            const audio = new Audio(button.getAttribute('data-audio'));
+            const icon = button.querySelector('.icon'); // تحديد الأيقونة بشكل صحيح
+
+            button.addEventListener('click', function() {
+                if (audio.paused) {
+                    audio.play(); // تشغيل المقطع الصوتي
+                    icon.classList.remove('fa-volume-up');
+                    icon.classList.add('fa-volume-mute'); // تغيير الأيقونة إلى أيقونة كتم الصوت
+                } else {
+                    audio.pause(); // إيقاف المقطع الصوتي تمامًا
+                    audio.currentTime = 0; // إعادة الصوت إلى البداية
+                    icon.classList.remove('fa-volume-mute');
+                    icon.classList.add('fa-volume-up'); // العودة إلى أيقونة الصوت
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

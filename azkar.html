@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أذكار الصباح والمساء | موقع الأذكار والأدعية</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+    <!-- Google Fonts - Amiri & Tajawal -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+    	/* تعريف خط Scheherazade New */
+@font-face {
+  font-family: 'Scheherazade New';
+  src: url('assets/fonts/ScheherazadeNew-Regular.ttf') format('truetype'),
+       url('assets/fonts/ScheherazadeNew-Medium.ttf') format('truetype'),
+       url('assets/fonts/ScheherazadeNew-Bold.ttf') format('truetype'),
+       url('assets/fonts/ScheherazadeNew-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* تعريف خط Amiri */
+@font-face {
+  font-family: 'Amiri';
+  src: url('assets/fonts/Amiri-Regular.ttf') format('truetype'),
+       url('assets/fonts/Amiri-Bold.ttf') format('truetype'),
+       url('assets/fonts/Amiri-Italic.ttf') format('truetype'),
+       url('assets/fonts/Amiri-BoldItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* تعريف خط Aref Ruqaa */
+@font-face {
+  font-family: 'Aref Ruqaa';
+  src: url('assets/fonts/ArefRuqaa-Regular.ttf') format('truetype'),
+       url('assets/fonts/ArefRuqaa-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* تعريف خط Reem Kufi */
+@font-face {
+  font-family: 'Reem Kufi';
+  src: url('assets/fonts/ReemKufi-VariableFont_wght.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-Bold.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-Medium.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-Regular.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+        :root {
+            --primary-color: #427D9D;
+            --secondary-color: #9BBEC8;
+            --accent-color: #164863;
+            --light-color: #DDF2FD;
+            --dark-color: #164863;
+            --text-color: #333;
+            --text-light: #f8f9fa;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --card-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05), 
+                          -10px -10px 20px rgba(255, 255, 255, 0.8);
+            --card-shadow-hover: 15px 15px 30px rgba(0, 0, 0, 0.1), 
+                                -15px -15px 30px rgba(255, 255, 255, 0.9);
+            --transition: all 0.3s ease-in-out;
+        }
+
+        .dark-mode {
+            --primary-color: #6096B4;
+            --secondary-color: #93BFCF;
+            --accent-color: #BDCDD6;
+            --light-color: #EEE9DA;
+            --dark-color: #1A374D;
+            --text-color: #f8f9fa;
+            --text-light: #f8f9fa;
+            --shadow-color: rgba(0, 0, 0, 0.25);
+            --card-bg: rgba(30, 41, 59, 0.85);
+            --card-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), 
+                          -10px -10px 20px rgba(30, 41, 59, 0.5);
+            --card-shadow-hover: 15px 15px 30px rgba(0, 0, 0, 0.3), 
+                                -15px -15px 30px rgba(30, 41, 59, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--light-color);
+            color: var(--text-color);
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        .dark-mode body {
+            background-color: var(--dark-color);
+        }
+
+        /* Background Animation */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 15s infinite linear;
+        }
+
+        .dark-mode .bg-animation .particle {
+            background-color: var(--accent-color);
+            opacity: 0.2;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Header & Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .dark-mode header {
+            background-color: rgba(22, 72, 99, 0.8);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-links li a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links li a:hover::after,
+        .nav-links li a.active::after {
+            width: 100%;
+        }
+
+        .nav-links li a.active {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .theme-toggle {
+            background: var(--light-color);
+            color: var(--dark-color);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
+        }
+
+        .dark-mode .theme-toggle {
+            background: var(--dark-color);
+            color: var(--light-color);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 5%;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            padding: 0 2rem;
+        }
+
+        .page-title::before,
+        .page-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 60px;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transform: translateY(-50%);
+        }
+
+        .page-title::before {
+            right: 100%;
+        }
+
+        .page-title::after {
+            left: 100%;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .tab {
+            padding: 0.8rem 2rem;
+            background-color: var(--card-bg);
+            border-radius: 50px;
+            box-shadow: var(--card-shadow);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            color: var(--text-color);
+            border: none;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tab:hover {
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-3px);
+        }
+
+        .tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Azkar Container */
+        .azkar-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .azkar-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            padding: 2rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .azkar-card:hover {
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        .azkar-number {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .azkar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .azkar-title {
+            font-family: 'Amiri', serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 2rem;
+        }
+
+        .azkar-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .action-btn {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .dark-mode .action-btn {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+        }
+
+        .action-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .azkar-text {
+            font-family: 'Amiri', serif;
+            font-size: 1.4rem;
+            line-height: 2;
+            text-align: right;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding: 1rem;
+            border-right: 3px solid var(--secondary-color);
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .dark-mode .azkar-text {
+            background-color: rgba(30, 41, 59, 0.5);
+        }
+
+        .azkar-source {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.7;
+            text-align: left;
+            font-style: italic;
+        }
+
+        .azkar-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode .azkar-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .azkar-repeat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .repeat-text {
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .counter-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .counter-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .counter-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .counter-btn:active {
+            transform: scale(0.95);
+        }
+
+        .counter-display {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            min-width: 80px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        .dark-mode .counter-display {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+        }
+
+        .reset-btn {
+            background-color: transparent;
+            color: var(--text-color);
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .reset-btn:hover {
+            opacity: 1;
+            color: var(--primary-color);
+        }
+
+        /* Features Section */
+        .features {
+            margin-top: 4rem;
+            padding: 3rem 0;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .dark-mode .features {
+            background-color: rgba(22, 72, 99, 0.3);
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 5%;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            padding: 2rem;
+            transition: var(--transition);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-card:hover {
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            background-color: var(--light-color);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .dark-mode .feature-icon {
+            background-color: var(--dark-color);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-desc {
+            font-size: 1rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Notification Section */
+        .notification-section {
+            margin-top: 4rem;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .notification-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            padding: 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .notification-title {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .notification-desc {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .notification-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: right;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .form-input,
+        .form-select {
+            padding: 0.8rem 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background-color: var(--light-color);
+            color: var(--text-color);
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .dark-mode .form-input,
+        .dark-mode .form-select {
+            background-color: var(--dark-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(66, 125, 157, 0.3);
+        }
+
+        .notification-btn {
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .notification-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 5%;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .footer-logo {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-desc {
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--light-color);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .footer-links li a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links li a:hover {
+            opacity: 1;
+            transform: translateX(-5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            z-index: 1000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            font-size: 1.5rem;
+        }
+
+        .toast-message {
+            font-size: 1rem;
+        }
+
+        .toast-close {
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .toast-close:hover {
+            opacity: 1;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .page-title {
+                font-size: 2.2rem;
+            }
+
+            .tabs {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: var(--card-bg);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                z-index: 1000;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .hamburger {
+                display: block;
+                z-index: 1001;
+            }
+
+            .close-menu {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 1.5rem;
+                cursor: pointer;
+                display: none;
+            }
+
+            .close-menu.active {
+                display: block;
+            }
+
+            .page-title {
+                font-size: 2rem;
+                padding: 0 1rem;
+            }
+
+            .page-title::before,
+            .page-title::after {
+                width: 30px;
+            }
+
+            .azkar-card {
+                padding: 1.5rem;
+            }
+
+            .azkar-text {
+                font-size: 1.2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .logo i {
+                font-size: 1.7rem;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .tabs {
+                gap: 1rem;
+            }
+
+            .tab {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .azkar-title {
+                font-size: 1.3rem;
+            }
+
+            .azkar-text {
+                font-size: 1.1rem;
+                line-height: 1.8;
+            }
+
+            .counter-btn {
+                width: 45px;
+                height: 45px;
+            }
+
+            .notification-title {
+                font-size: 1.5rem;
+            }
+
+            .notification-desc {
+                font-size: 1rem;
+            }
+        }
+
+        /* Audio Player Styles */
+        .audio-player {
+            background-color: var(--card-bg);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .play-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .audio-progress {
+            flex: 1;
+            height: 5px;
+            background-color: var(--light-color);
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .dark-mode .audio-progress {
+            background-color: var(--dark-color);
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background-color: var(--primary-color);
+            transition: width 0.1s linear;
+        }
+
+        .audio-time {
+            font-size: 0.8rem;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        /* Animation for azkar cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .azkar-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .azkar-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .azkar-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .azkar-card:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .azkar-card:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+        
+        
+        .logo-img {
+        width: 40px;  /* يمكنك تغيير هذا الحجم حسب الحاجة */
+        height: auto; /* لضمان الحفاظ على النسبة بين العرض والارتفاع */
+    }
+    </style>
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <!-- Header & Navbar -->
+    <header>
+        <nav class="navbar">
+ <a href="index.html" class="logo">
+    <img src="icn/Logo.png" alt="درر الذكر والتسبيح" class="logo-img">
+    <span>درر الذكر والتسبيح</span>
+</a>
+
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html"><i class="fas fa-home"></i> الصفحة الرئيسية</a></li>
+        <li><a href="azkar.html" class="active"><i class="fas fa-book-open"></i> أذكار الصباح والمساء</a></li>
+        <li><a href="daily-duas.html"><i class="fas fa-pray"></i> الأدعية اليومية</a></li>
+        <li><a href="occasion-duas.html"><i class="fas fa-calendar-alt"></i> أدعية المناسبات</a></li>
+        <li><a href="auth-azkar.html"><i class="fas fa-star"></i> الأذكار المأثورة</a></li>
+        <li><a href="listen-azkar.html"><i class="fas fa-headphones"></i> استماع إلى الأذكار</a></li>
+        <span class="close-menu" id="closeMenu"><i class="fas fa-times"></i></span>
+    </ul>
+    <div class="toggle-container">
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-sun"></i>
+        </button>
+        <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="page-header" data-aos="fade-up">
+            <h1 class="page-title">أذكار الصباح والمساء</h1>
+            <p class="page-subtitle">مجموعة من الأذكار التي يستحب للمسلم أن يذكرها في الصباح والمساء، ثبتت عن النبي صلى الله عليه وسلم، ويحصل بها الأجر العظيم وحفظ الله تعالى للعبد.</p>
+        </div>
+
+        <div class="tabs" data-aos="fade-up" data-aos-delay="100">
+            <button class="tab active" id="morningTab"><i class="fas fa-sun"></i> أذكار الصباح</button>
+            <button class="tab" id="eveningTab"><i class="fas fa-moon"></i> أذكار المساء</button>
+        </div>
+
+        <div class="azkar-container" id="azkarContainer">
+            <!-- Azkar will be loaded here -->
+        </div>
+
+        <!-- Features Section -->
+<section class="features" data-aos="fade-up">
+    <h2 class="section-title">مميزات تطبيق الأذكار</h2>
+    <div class="features-grid">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="feature-icon">
+                <i class="fas fa-user-check"></i> <!-- أيقونة استخدام سهل -->
+            </div>
+            <h3 class="feature-title">استخدام سهل</h3>
+            <p class="feature-desc">تطبيق سهل الاستخدام مع واجهة بسيطة لتصفح الأذكار وتنفيذ المهام بسهولة.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-icon">
+                <i class="fas fa-headphones-alt"></i> <!-- أيقونة الاستماع للأذكار -->
+            </div>
+            <h3 class="feature-title">الاستماع للأذكار</h3>
+            <p class="feature-desc">إمكانية الاستماع إلى الأذكار بصوت مشايخ مختلفين بجودة عالية</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-icon">
+                <i class="fas fa-share-alt"></i> <!-- أيقونة مشاركة الأذكار -->
+            </div>
+            <h3 class="feature-title">مشاركة الأذكار</h3>
+            <p class="feature-desc">إمكانية مشاركة الأذكار مع الأصدقاء والعائلة عبر مختلف وسائل التواصل</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="feature-icon">
+                <i class="fas fa-cloud-download-alt"></i> <!-- أيقونة تطبيق بدون انترنت -->
+            </div>
+            <h3 class="feature-title">تطبيق بدون انترنت</h3>
+            <p class="feature-desc">التمتع بتجربة استخدام التطبيق دون الحاجة للاتصال بالإنترنت، حيث يمكنك الوصول للأذكار في أي وقت.</p>
+        </div>
+    </div>
+</section>
+
+
+
+        
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <!-- استبدال الأيقونة بأيقونة من مجلد icn -->
+                    <img src="icn/Logo.png" alt="Moon Icon" class="footer-icon" style="width: 30px; height: 30px;">
+                    <span>درر الذكر والتسبيح</span>
+                </div>
+                
+                <p class="footer-desc">موقع متخصص في الأذكار والأدعية الإسلامية الصحيحة، يهدف إلى تذكير المسلمين بالأذكار اليومية وتسهيل حفظها وترديدها.</p>
+                
+            </div>
+           <div class="footer-column">
+    <h3 class="footer-title">روابط سريعة</h3>
+    <ul class="footer-links">
+        <li><a href="index.html"><i class="fas fa-chevron-left"></i> الصفحة الرئيسية</a></li>
+        <li><a href="azkar.html"><i class="fas fa-chevron-left"></i> أذكار الصباح والمساء</a></li>
+        <li><a href="daily-duas.html"><i class="fas fa-chevron-left"></i> الأدعية اليومية</a></li>
+        <li><a href="occasion-duas.html"><i class="fas fa-chevron-left"></i> أدعية المناسبات</a></li>
+        <li><a href="auth-azkar.html"><i class="fas fa-chevron-left"></i> الأذكار المأثورة</a></li>
+    </ul>
+</div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">تواصل معنا</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-envelope"></i>ttyy5468@gmail.com</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> +967 770375454</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> اليمن محافظة إب</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+جميع الحقوق محفوظة © 2025 موقع درر الذكر والتسبيح
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-icon"><i class="fas fa-check-circle"></i></div>
+        <div class="toast-message">تم تفعيل التذكير بنجاح!</div>
+        <button class="toast-close" id="toastClose"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="css/aos.js"></script>
+    
+    <script>
+        // Initialize AOS Animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Background Animation
+        function createParticles() {
+            const bgAnimation = document.getElementById('bgAnimation');
+            const numberOfParticles = 50;
+            
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random position
+                const posX = Math.random() * window.innerWidth;
+                const posY = Math.random() * window.innerHeight;
+                
+                // Random size
+                const size = Math.random() * 5 + 3;
+                
+                // Random animation duration
+                const duration = Math.random() * 15 + 10;
+                
+                // Random delay
+                const delay = Math.random() * 5;
+                
+                particle.style.left = `${posX}px`;
+                particle.style.top = `${posY}px`;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                bgAnimation.appendChild(particle);
+            }
+        }
+        
+        createParticles();
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Check saved theme
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+
+        // Mobile Menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        const closeMenu = document.getElementById('closeMenu');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.add('active');
+            closeMenu.classList.add('active');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            closeMenu.classList.remove('active');
+        });
+
+        // Tabs
+        const morningTab = document.getElementById('morningTab');
+        const eveningTab = document.getElementById('eveningTab');
+        const azkarContainer = document.getElementById('azkarContainer');
+        
+        morningTab.addEventListener('click', () => {
+            morningTab.classList.add('active');
+            eveningTab.classList.remove('active');
+            loadAzkar('morning');
+        });
+        
+        eveningTab.addEventListener('click', () => {
+            eveningTab.classList.add('active');
+            morningTab.classList.remove('active');
+            loadAzkar('evening');
+        });
+
+        // Azkar Data
+        const morningAzkar = [
+            {
+                id: 1,
+                title: "آية الكرسي",
+                text: "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",
+                source: "سورة البقرة: 255",
+                repeat: 1,
+                audio: "azkar/255.mp3"
+            },
+            {
+                id: 2,
+                title: "سورة الإخلاص والمعوذتين",
+                text: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\nقُلْ هُوَ اللَّهُ أَحَدٌ ﴿١﴾ اللَّهُ الصَّمَدُ ﴿٢﴾ لَمْ يَلِدْ وَلَمْ يُولَدْ ﴿٣﴾ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ ﴿٤﴾\n\nبِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\nقُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ﴿١﴾ مِن شَرِّ مَا خَلَقَ ﴿٢﴾ وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ ﴿٣﴾ وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ﴿٤﴾ وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ ﴿٥﴾\n\nبِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\nقُلْ أَعُوذُ بِرَبِّ النَّاسِ ﴿١﴾ مَلِكِ النَّاسِ ﴿٢﴾ إِلَٰهِ النَّاسِ ﴿٣﴾ مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ﴿٤﴾ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ﴿٥﴾ مِنَ الْجِنَّةِ وَالنَّاسِ ﴿٦﴾",
+                source: "رواه أبو داود والترمذي",
+                repeat: 3,
+                audio: "azkar/112_114.mp3"
+            },
+            {
+                id: 3,
+                title: "أصبحنا وأصبح الملك لله",
+                text: "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ",
+                source: "رواه مسلم",
+                repeat: 1,
+                audio: "azkar/audio11.mp3"
+            },
+            {
+                id: 4,
+                title: "اللهم أنت ربي",
+                text: "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",
+                source: "رواه البخاري",
+                repeat: 1,
+                audio: "azkar/004.mp3"
+            },
+            {
+                id: 5,
+                title: "أصبحنا على فطرة الإسلام",
+                text: "أَصْبَحْنَا عَلَى فِطْرَةِ الْإِسْلَامِ، وَعَلَى كَلِمَةِ الْإِخْلَاصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَعَلَى مِلَّةِ أَبِينَا إِبْرَاهِيمَ، حَنِيفًا مُسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِينَ",
+                source: "رواه أحمد",
+                repeat: 1,
+                audio: "azkar/005.mp3"
+            }
+        ];
+
+        const eveningAzkar = [
+            {
+                id: 1,
+                title: "آية الكرسي",
+                text: "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",
+                source: "سورة البقرة: 255",
+                repeat: 1,
+                audio: "azkar/255.mp3"
+            },
+            {
+                id: 2,
+                title: "سورة الإخلاص والمعوذتين",
+                text: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\nقُلْ هُوَ اللَّهُ أَحَدٌ ﴿١﴾ اللَّهُ الصَّمَدُ ﴿٢﴾ لَمْ يَلِدْ وَلَمْ يُولَدْ ﴿٣﴾ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ ﴿٤﴾\n\nبِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\nقُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ﴿١﴾ مِن شَرِّ مَا خَلَقَ ﴿٢﴾ وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ ﴿٣﴾ وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ﴿٤﴾ وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ ﴿٥﴾\n\nبِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\nقُلْ أَعُوذُ بِرَبِّ النَّاسِ ﴿١﴾ مَلِكِ النَّاسِ ﴿٢﴾ إِلَٰهِ النَّاسِ ﴿٣﴾ مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ﴿٤﴾ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ﴿٥﴾ مِنَ الْجِنَّةِ وَالنَّاسِ ﴿٦﴾",
+                source: "رواه أبو داود والترمذي",
+                repeat: 3,
+                audio: "azkar/112_114.mp3"
+            },
+            {
+                id: 3,
+                title: "أمسينا وأمسى الملك لله",
+                text: "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ",
+                source: "رواه مسلم",
+                repeat: 1,
+                audio: "azkar/003.mp3"
+            },
+            {
+                id: 4,
+                title: "اللهم أنت ربي",
+                text: "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",
+                source: "رواه البخاري",
+                repeat: 1,
+                audio: "azkar/004.mp3"
+            },
+            {
+                id: 5,
+                title: "أمسينا على فطرة الإسلام",
+                text: "أَمْسَيْنَا عَلَى فِطْرَةِ الْإِسْلَامِ، وَعَلَى كَلِمَةِ الْإِخْلَاصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَعَلَى مِلَّةِ أَبِينَا إِبْرَاهِيمَ، حَنِيفًا مُسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِينَ",
+                source: "رواه أحمد",
+                repeat: 1,
+                audio: "azkar/006.mp3"
+            }
+        ];
+
+        // Load Azkar Function
+        function loadAzkar(type) {
+            azkarContainer.innerHTML = '';
+            const azkarData = type === 'morning' ? morningAzkar : eveningAzkar;
+            
+            azkarData.forEach((zikr, index) => {
+                const card = document.createElement('div');
+                card.classList.add('azkar-card');
+                card.style.animationDelay = `${index * 0.2}s`;
+                
+                card.innerHTML = `
+                    <div class="azkar-number">${zikr.id}</div>
+                    <div class="azkar-header">
+                        <h3 class="azkar-title">${zikr.title}</h3>
+                        <div class="azkar-actions">
+                          
+                            <button class="action-btn share-btn" title="مشاركة">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                            <button class="action-btn play-audio-btn" title="الاستماع" data-audio="${zikr.audio}">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="azkar-text">${zikr.text.replace(/\n/g, '<br>')}</div>
+                    <div class="azkar-source">${zikr.source}</div>
+                    <div class="audio-player" style="display: none;">
+                        <button class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="audio-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="audio-time">0:00</div>
+                    </div>
+                    <div class="azkar-footer">
+                        <div class="azkar-repeat">
+                            <span class="repeat-text">عدد التكرار: ${zikr.repeat}</span>
+                        </div>
+                        <div class="counter-container">
+                            <button class="reset-btn">إعادة</button>
+                            <div class="counter-display">0/${zikr.repeat}</div>
+                            <button class="counter-btn">
+                                <i class="fas fa-hand-point-up"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                azkarContainer.appendChild(card);
+            });
+            
+            // Initialize counters
+            initializeCounters();
+            
+            // Initialize audio players
+            initializeAudioPlayers();
+            
+            // Initialize favorite buttons
+            initializeFavoriteButtons();
+            
+            // Initialize share buttons
+            initializeShareButtons();
+        }
+
+        // Initialize Counters
+        function initializeCounters() {
+            const counterBtns = document.querySelectorAll('.counter-btn');
+            const resetBtns = document.querySelectorAll('.reset-btn');
+            
+            counterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const counterDisplay = this.parentElement.querySelector('.counter-display');
+                    const [current, max] = counterDisplay.textContent.split('/');
+                    let newCount = parseInt(current) + 1;
+                    
+                    if (newCount <= parseInt(max)) {
+                        counterDisplay.textContent = `${newCount}/${max}`;
+                        
+                        // Add animation effect
+                        this.classList.add('clicked');
+                        setTimeout(() => {
+                            this.classList.remove('clicked');
+                        }, 300);
+                        
+                        // Check if completed
+                        if (newCount == parseInt(max)) {
+                            counterDisplay.style.color = 'var(--primary-color)';
+                            counterDisplay.style.fontWeight = '700';
+                            
+                            // Show toast notification
+                            showToast(`أحسنت! لقد أكملت هذا الذكر`);
+                        }
+                    }
+                });
+            });
+            
+            resetBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const counterDisplay = this.parentElement.querySelector('.counter-display');
+                    const max = counterDisplay.textContent.split('/')[1];
+                    counterDisplay.textContent = `0/${max}`;
+                    counterDisplay.style.color = '';
+                    counterDisplay.style.fontWeight = '';
+                });
+            });
+        }
+
+        // Initialize Audio Players
+        function initializeAudioPlayers() {
+            const playAudioBtns = document.querySelectorAll('.play-audio-btn');
+            
+            playAudioBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const audioUrl = this.getAttribute('data-audio');
+                    const audioPlayer = this.closest('.azkar-card').querySelector('.audio-player');
+                    const playBtn = audioPlayer.querySelector('.play-btn');
+                    const progressBar = audioPlayer.querySelector('.progress-bar');
+                    const audioTime = audioPlayer.querySelector('.audio-time');
+                    
+                    // Toggle audio player visibility
+                    if (audioPlayer.style.display === 'none') {
+                        audioPlayer.style.display = 'flex';
+                        
+                        // Create audio element if not exists
+                        if (!audioPlayer.querySelector('audio')) {
+                            const audio = document.createElement('audio');
+                            audio.src = audioUrl;
+                            audio.style.display = 'none';
+                            
+                            // Update progress bar
+                            audio.addEventListener('timeupdate', function() {
+                                const progress = (this.currentTime / this.duration) * 100;
+                                progressBar.style.width = `${progress}%`;
+                                
+                                // Update time display
+                                const minutes = Math.floor(this.currentTime / 60);
+                                const seconds = Math.floor(this.currentTime % 60);
+                                audioTime.textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+                            });
+                            
+                            // On audio end
+                            audio.addEventListener('ended', function() {
+                                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                                progressBar.style.width = '0';
+                                audioTime.textContent = '0:00';
+                                this.currentTime = 0;
+                            });
+                            
+                            audioPlayer.appendChild(audio);
+                        }
+                        
+                        // Play audio
+                        const audio = audioPlayer.querySelector('audio');
+                        audio.play();
+                        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    } else {
+                        audioPlayer.style.display = 'none';
+                        const audio = audioPlayer.querySelector('audio');
+                        if (audio) {
+                            audio.pause();
+                            audio.currentTime = 0;
+                        }
+                    }
+                });
+            });
+            
+            // Play/Pause button functionality
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.play-btn')) {
+                    const playBtn = e.target.closest('.play-btn');
+                    const audioPlayer = playBtn.closest('.audio-player');
+                    const audio = audioPlayer.querySelector('audio');
+                    
+                    if (audio.paused) {
+                        audio.play();
+                        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    } else {
+                        audio.pause();
+                        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    }
+                }
+            });
+            
+            // Progress bar click functionality
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.audio-progress')) {
+                    const progressBar = e.target.closest('.audio-progress');
+                    const audio = progressBar.closest('.audio-player').querySelector('audio');
+                    
+                    const clickPosition = e.offsetX / progressBar.offsetWidth;
+                    audio.currentTime = clickPosition * audio.duration;
+                }
+            });
+        }
+
+        // Initialize Favorite Buttons
+        function initializeFavoriteButtons() {
+            const favoriteBtns = document.querySelectorAll('.favorite-btn');
+            
+            favoriteBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const icon = this.querySelector('i');
+                    
+                    if (icon.classList.contains('far')) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                        icon.style.color = '#e74c3c';
+                        showToast('تم إضافة الذكر إلى المفضلة');
+                    } else {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                        icon.style.color = '';
+                        showToast('تم إزالة الذكر من المفضلة');
+                    }
+                });
+            });
+        }
+
+        // Initialize Share Buttons
+        function initializeShareButtons() {
+            const shareBtns = document.querySelectorAll('.share-btn');
+            
+            shareBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const card = this.closest('.azkar-card');
+                    const title = card.querySelector('.azkar-title').textContent;
+                    const text = card.querySelector('.azkar-text').textContent;
+                    
+                    // Check if Web Share API is available
+                    if (navigator.share) {
+                        navigator.share({
+                            title: title,
+                            text: text,
+                            url: window.location.href
+                        })
+                        .then(() => showToast('تم مشاركة الذكر بنجاح'))
+                        .catch(error => console.log('Error sharing:', error));
+                    } else {
+                        // Fallback for browsers that don't support Web Share API
+                        // Copy to clipboard
+                        const textToCopy = `${title}\n\n${text}\n\nمصدر: ${card.querySelector('.azkar-source').textContent}`;
+                        
+                        const textarea = document.createElement('textarea');
+                        textarea.value = textToCopy;
+                        document.body.appendChild(textarea);
+                        textarea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(textarea);
+                        
+                        showToast('تم نسخ الذكر إلى الحافظة');
+                    }
+                });
+            });
+        }
+
+        // Show Toast Notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = toast.querySelector('.toast-message');
+            
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Close Toast
+        document.getElementById('toastClose').addEventListener('click', function() {
+            document.getElementById('toast').classList.remove('show');
+        });
+
+        // Enable Notification Button
+        document.getElementById('enableNotificationBtn').addEventListener('click', function() {
+            // Check if browser supports notifications
+            if ('Notification' in window) {
+                Notification.requestPermission().then(permission => {
+                    if (permission === 'granted') {
+                        const reminderType = document.getElementById('reminderType').value;
+                        const morningTime = document.getElementById('morningTime').value;
+                        const eveningTime = document.getElementById('eveningTime').value;
+                        
+                        // Save settings to localStorage
+                        localStorage.setItem('reminderType', reminderType);
+                        localStorage.setItem('morningTime', morningTime);
+                        localStorage.setItem('eveningTime', eveningTime);
+                        
+                        showToast('تم تفعيل التذكير بنجاح!');
+                    } else {
+                        showToast('يرجى السماح بالإشعارات لتفعيل التذكير');
+                    }
+                });
+            } else {
+                showToast('متصفحك لا يدعم الإشعارات');
+            }
+        });
+
+        // Load Azkar on page load
+        loadAzkar('morning');
+    </script>
+</body>
+</html>

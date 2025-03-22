@@ -1,0 +1,2227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأذكار المأثورة | موقع الأذكار والأدعية</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Reem+Kufi:wght@400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+    	/* تعريف خط Scheherazade New */
+@font-face {
+  font-family: 'Scheherazade New';
+  src: url('assets/fonts/ScheherazadeNew-Regular.ttf') format('truetype'),
+       url('assets/fonts/ScheherazadeNew-Medium.ttf') format('truetype'),
+       url('assets/fonts/ScheherazadeNew-Bold.ttf') format('truetype'),
+       url('assets/fonts/ScheherazadeNew-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* تعريف خط Amiri */
+@font-face {
+  font-family: 'Amiri';
+  src: url('assets/fonts/Amiri-Regular.ttf') format('truetype'),
+       url('assets/fonts/Amiri-Bold.ttf') format('truetype'),
+       url('assets/fonts/Amiri-Italic.ttf') format('truetype'),
+       url('assets/fonts/Amiri-BoldItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* تعريف خط Aref Ruqaa */
+@font-face {
+  font-family: 'Aref Ruqaa';
+  src: url('assets/fonts/ArefRuqaa-Regular.ttf') format('truetype'),
+       url('assets/fonts/ArefRuqaa-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* تعريف خط Reem Kufi */
+@font-face {
+  font-family: 'Reem Kufi';
+  src: url('assets/fonts/ReemKufi-VariableFont_wght.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-Bold.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-Medium.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-Regular.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+        :root {
+            --primary-light: #f3f4f6;
+            --secondary-light: #e5e7eb;
+            --accent-light: #10b981;
+            --text-light: #1f2937;
+            --bg-light: #ffffff;
+            --card-light: #ffffff;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --sahih-light: #10b981;
+            --hasan-light: #3b82f6;
+            --daeef-light: #f59e0b;
+
+            --primary-dark: #1f2937;
+            --secondary-dark: #111827;
+            --accent-dark: #10b981;
+            --text-dark: #f9fafb;
+            --bg-dark: #111827;
+            --card-dark: #1f2937;
+            --shadow-dark: rgba(0, 0, 0, 0.5);
+            --sahih-dark: #34d399;
+            --hasan-dark: #60a5fa;
+            --daeef-dark: #fbbf24;
+
+            --primary: var(--primary-light);
+            --secondary: var(--secondary-light);
+            --accent: var(--accent-light);
+            --text-color: var(--text-light);
+            --bg-color: var(--bg-light);
+            --card-color: var(--card-light);
+            --shadow-color: var(--shadow-light);
+            --sahih-color: var(--sahih-light);
+            --hasan-color: var(--hasan-light);
+            --daeef-color: var(--daeef-light);
+
+            --transition-speed: 0.3s;
+            --border-radius: 15px;
+            --font-primary: 'Scheherazade New', serif;
+  --font-secondary: 'Amiri', serif;
+  --font-title: 'Aref Ruqaa', serif;
+  --font-ui: 'Reem Kufi', sans-serif;
+        }
+
+        .dark-mode {
+            --primary: var(--primary-dark);
+            --secondary: var(--secondary-dark);
+            --accent: var(--accent-dark);
+            --text-color: var(--text-dark);
+            --bg-color: var(--bg-dark);
+            --card-color: var(--card-dark);
+            --shadow-color: var(--shadow-dark);
+            --sahih-color: var(--sahih-dark);
+            --hasan-color: var(--hasan-dark);
+            --daeef-color: var(--daeef-dark);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color var(--transition-speed), color var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* تأثير الخلفية الإسلامية */
+        .islamic-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48ZyBmaWxsPSIjMDAwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGlkPSJjaHVyY2gtb24td2hpdGUiIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iMSI+PHBhdGggZD0iTTAgMGg4MHY4MEgwVjB6bTIwIDIwaDQwdjQwSDIwVjIweiIgb3BhY2l0eT0iLjUiLz48cGF0aCBkPSJNODAgMHY4MEgwVjBoODB6TTIwIDIwdjQwaDQwVjIwSDIweiIgb3BhY2l0eT0iLjMiLz48L2c+PC9nPjwvc3ZnPg==');
+            background-size: 80px 80px;
+        }
+
+        .dark-mode .islamic-pattern {
+            opacity: 0.05;
+            filter: invert(1);
+        }
+
+        /* النافبار */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: var(--card-color);
+            box-shadow: 0 4px 15px var(--shadow-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-title);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            font-family: var(--font-ui);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        .nav-links a.active {
+            background-color: var(--accent);
+            color: var(--card-color);
+        }
+
+        .nav-links a.active::after {
+            width: 0;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--primary);
+            transform: rotate(30deg);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* الهيرو سيكشن */
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-title);
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent);
+            border-radius: 3px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        /* قسم البحث المتقدم */
+        .search-section {
+            padding: 2rem 5%;
+            background-color: var(--primary);
+            border-radius: var(--border-radius);
+            margin: 0 5% 2rem;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+
+        .search-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .search-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-family: var(--font-title);
+            color: var(--accent);
+        }
+
+        .search-form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .search-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .search-group {
+            flex: 1;
+            position: relative;
+        }
+
+        .search-input, .search-select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--secondary);
+            background-color: var(--card-color);
+            color: var(--text-color);
+            font-size: 1rem;
+            font-family: var(--font-ui);
+            transition: all 0.3s;
+        }
+
+        .search-input:focus, .search-select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+        }
+
+        .search-label {
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background-color: var(--primary);
+            padding: 0 5px;
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-family: var(--font-ui);
+        }
+
+        .search-btn {
+            padding: 1rem;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: var(--font-ui);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        /* قسم الفلتر والتصنيف */
+        .filter-section {
+            padding: 0 5% 2rem;
+        }
+
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--card-color);
+            color: var(--text-color);
+            border: 1px solid var(--secondary);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: var(--font-ui);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .filter-btn i {
+            margin-left: 0.5rem;
+        }
+
+        .filter-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 0 5%;
+        }
+
+        .results-count {
+            font-size: 1rem;
+            color: var(--accent);
+            font-family: var(--font-ui);
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .view-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--card-color);
+            color: var(--text-color);
+            border: 1px solid var(--secondary);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .view-btn:hover, .view-btn.active {
+            background-color: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        /* قسم الأذكار */
+        .adhkar-section {
+            padding: 2rem 5%;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-family: var(--font-title);
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background-color: var(--accent);
+            border-radius: 3px;
+        }
+
+        .adhkar-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .adhkar-container.list-view {
+            grid-template-columns: 1fr;
+        }
+
+        .adhkar-card {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transition: all 0.4s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .adhkar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--shadow-color);
+        }
+
+        .card-header {
+            padding: 1rem;
+            border-bottom: 1px solid var(--secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-category {
+            font-size: 0.9rem;
+            font-family: var(--font-ui);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .category-sahih {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--sahih-color);
+        }
+
+        .category-hasan {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--hasan-color);
+        }
+
+        .category-daeef {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: var(--daeef-color);
+        }
+
+        .card-bookmark {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .card-bookmark:hover, .card-bookmark.active {
+            color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-title);
+            color: var(--accent);
+            line-height: 1.4;
+        }
+
+        .card-text {
+            font-size: 1.3rem;
+            line-height: 2;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            font-family: var(--font-secondary);
+        }
+
+        .card-source {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            font-style: italic;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-source i {
+            color: var(--accent);
+        }
+
+        .card-footer {
+            padding: 1rem;
+            border-top: 1px solid var(--secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary);
+            color: var(--text-color);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .action-btn:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .card-counter {
+            font-size: 1rem;
+            font-family: var(--font-ui);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .counter-btn {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary);
+            color: var(--text-color);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .counter-btn:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .counter-value {
+            min-width: 30px;
+            text-align: center;
+        }
+
+        /* قسم المصادر */
+        .sources-section {
+            padding: 4rem 5%;
+            background-color: var(--primary);
+            border-radius: var(--border-radius);
+            margin: 2rem 5%;
+            position: relative;
+        }
+
+        .sources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .source-card {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transition: all 0.3s;
+        }
+
+        .source-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--shadow-color);
+        }
+
+        .source-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary);
+            border-radius: 50%;
+            font-size: 2rem;
+            color: var(--accent);
+            transition: all 0.3s;
+        }
+
+        .source-card:hover .source-icon {
+            background-color: var(--accent);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .source-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-title);
+            color: var(--accent);
+        }
+
+        .source-count {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .source-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary);
+            color: var(--text-color);
+            border: none;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-family: var(--font-ui);
+            transition: all 0.3s;
+        }
+
+        .source-btn:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        /* قسم الاستماع */
+        .audio-section {
+            padding: 2rem 5%;
+        }
+
+        .audio-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .audio-card {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transition: all 0.3s;
+        }
+
+        .audio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--shadow-color);
+        }
+
+        .audio-header {
+            position: relative;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .audio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+
+        .audio-card:hover .audio-img {
+            transform: scale(1.1);
+        }
+
+        .audio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+        }
+
+        .audio-category {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-family: var(--font-ui);
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--text-color);
+        }
+
+        .audio-content {
+            padding: 1.5rem;
+        }
+
+        .audio-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-title);
+            color: var(--accent);
+        }
+
+        .audio-player {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .audio-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--primary);
+            color: var(--text-color);
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: var(--font-ui);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .audio-btn:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        /* الفوتر */
+        .footer {
+            background-color: var(--card-color);
+            padding: 3rem 5% 1rem;
+            margin-top: 3rem;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            box-shadow: 0 -5px 15px var(--shadow-color);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .footer-about p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            font-family: var(--font-title);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(-5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--text-color);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--primary);
+            font-size: 0.9rem;
+        }
+
+        /* زر العودة للأعلى */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            z-index: 100;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--shadow-color);
+        }
+
+        /* المودال */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            transform: translateY(-50px);
+            transition: all 0.3s;
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-family: var(--font-title);
+            color: var(--accent);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .modal-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .modal-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .info-item i {
+            color: var(--accent);
+        }
+
+        .modal-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--secondary);
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        .modal-btn {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary);
+            color: var(--text-color);
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: var(--font-ui);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .modal-btn:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .modal-btn.primary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .modal-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        /* التوافقية مع الأجهزة المحمولة */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--card-color);
+                padding: 1rem;
+                box-shadow: 0 5px 15px var(--shadow-color);
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .search-row {
+                flex-direction: column;
+            }
+
+            .adhkar-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .audio-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* تحسينات الأداء */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* تأثيرات الحركة */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-5 {
+            animation-delay: 0.5s;
+        }
+        
+        
+        .logo-img {
+        width: 40px;  /* يمكنك تغيير هذا الحجم حسب الحاجة */
+        height: auto; /* لضمان الحفاظ على النسبة بين العرض والارتفاع */
+    }
+    </style>
+</head>
+<body>
+    <!-- تأثير الخلفية الإسلامية -->
+    <div class="islamic-pattern"></div>
+
+    <!-- النافبار -->
+    <!-- النافبار -->
+<nav class="navbar">
+    <a href="index.html" class="logo">
+    <img src="icn/Logo.png" alt="درر الذكر والتسبيح" class="logo-img">
+    <span>درر الذكر والتسبيح</span>
+</a>
+
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html"><i class="fas fa-home"></i> الصفحة الرئيسية</a>
+        <a href="azkar.html"><i class="fas fa-sun"></i> أذكار الصباح والمساء</a>
+        <a href="daily-duas.html"><i class="fas fa-book-open"></i> الأدعية اليومية</a>
+        <a href="occasion-duas.html"><i class="fas fa-calendar-alt"></i> أدعية خاصة بالمناسبات</a>
+        <a href="auth-azkar.html" class="active"><i class="fas fa-pray"></i> الأذكار المأثورة</a>
+        <a href="listen-azkar.html"><i class="fas fa-headphones"></i> استماع إلى الأذكار</a>
+    </div>
+    <div class="navbar-actions">
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-sun"></i>
+        </button>
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
+
+    <!-- الهيرو سيكشن -->
+    <section class="hero">
+        <h1 class="fade-in">الأذكار المأثورة</h1>
+        <p class="fade-in delay-1">مجموعة مختارة من الأذكار التي وردت عن النبي صلى الله عليه وسلم في كتب الحديث الصحيحة، مصنفة حسب درجتها ومصادرها، لتكون زادًا للمسلم في حياته اليومية.</p>
+    </section>
+
+    <!-- قسم البحث المتقدم -->
+    <section class="search-section fade-in delay-2">
+        <div class="search-container">
+            <h2 class="search-title">البحث في الأذكار</h2>
+            <form class="search-form">
+                <div class="search-row">
+                    <div class="search-group">
+                        <label class="search-label">كلمات البحث</label>
+                        <input type="text" class="search-input" placeholder="ابحث عن ذكر معين...">
+                    </div>
+                </div>
+                <div class="search-row">
+                    <div class="search-group">
+                        <label class="search-label">المصدر</label>
+                        <select class="search-select">
+                            <option value="">جميع المصادر</option>
+                            <option value="bukhari">صحيح البخاري</option>
+                            <option value="muslim">صحيح مسلم</option>
+                            <option value="tirmidhi">سنن الترمذي</option>
+                            <option value="abudawood">سنن أبي داود</option>
+                            <option value="nasai">سنن النسائي</option>
+                            <option value="ibnmajah">سنن ابن ماجه</option>
+                            <option value="ahmad">مسند الإمام أحمد</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <label class="search-label">درجة الحديث</label>
+                        <select class="search-select">
+                            <option value="">جميع الدرجات</option>
+                            <option value="sahih">صحيح</option>
+                            <option value="hasan">حسن</option>
+                            <option value="daeef">ضعيف</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <label class="search-label">التصنيف</label>
+                        <select class="search-select">
+                            <option value="">جميع التصنيفات</option>
+                            <option value="morning">أذكار الصباح</option>
+                            <option value="evening">أذكار المساء</option>
+                            <option value="sleep">أذكار النوم</option>
+                            <option value="prayer">أذكار الصلاة</option>
+                            <option value="general">أذكار عامة</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="search-btn">
+                    <i class="fas fa-search"></i> بحث
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- قسم الفلتر والتصنيف -->
+    <section class="filter-section fade-in delay-3">
+        <div class="filter-container">
+            <button class="filter-btn active"><i class="fas fa-th-large"></i> الكل</button>
+            <button class="filter-btn"><i class="fas fa-check-circle"></i> صحيح</button>
+            <button class="filter-btn"><i class="fas fa-star"></i> حسن</button>
+            <button class="filter-btn"><i class="fas fa-exclamation-circle"></i> ضعيف</button>
+            <button class="filter-btn"><i class="fas fa-book"></i> البخاري</button>
+            <button class="filter-btn"><i class="fas fa-book"></i> مسلم</button>
+            <button class="filter-btn"><i class="fas fa-sun"></i> أذكار الصباح</button>
+            <button class="filter-btn"><i class="fas fa-moon"></i> أذكار المساء</button>
+        </div>
+        <div class="filter-info">
+            <div class="results-count">عرض 100 ذكر</div>
+            <div class="view-toggle">
+                <button class="view-btn active" id="gridViewBtn"><i class="fas fa-th-large"></i></button>
+                <button class="view-btn" id="listViewBtn"><i class="fas fa-list"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأذكار -->
+    <section class="adhkar-section">
+        <h2 class="section-title fade-in delay-4">الأذكار المأثورة</h2>
+        <div class="adhkar-container" id="adhkarContainer">
+            <!-- بطاقة ذكر 1 -->
+            <div class="adhkar-card fade-in delay-1" data-index="0">
+                <div class="card-header">
+                    <span class="card-category category-sahih">صحيح</span>
+                   
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">سيد الاستغفار</h3>
+                    <p class="card-text">اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ.</p>
+                    <div class="card-source">
+                        <i class="fas fa-book"></i>
+                        <span>رواه البخاري في صحيحه (6306)</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-actions">
+                        <button class="action-btn" title="نسخ"><i class="fas fa-copy"></i></button>
+                        <button class="action-btn" title="مشاركة"><i class="fas fa-share-alt"></i></button>
+                   <button class="action-btn play-btn" title="استماع" data-audio="auth-azkar/audio1.mp3">
+                <i class="fas fa-volume-up"></i>
+            </button>
+                        <button class="action-btn details-btn" title="التفاصيل"><i class="fas fa-info-circle"></i></button>
+                    </div>
+                    <div class="card-counter">
+                        <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                        <span class="counter-value">0</span>
+                        <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بطاقة ذكر 2 -->
+            <div class="adhkar-card fade-in delay-2" data-index="1">
+                <div class="card-header">
+                    <span class="card-category category-sahih">صحيح</span>
+
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">ذكر عند الاستيقاظ من النوم</h3>
+                    <p class="card-text">الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ.</p>
+                    <div class="card-source">
+                        <i class="fas fa-book"></i>
+                        <span>رواه البخاري في صحيحه (6312)</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-actions">
+                        <button class="action-btn" title="نسخ"><i class="fas fa-copy"></i></button>
+                        <button class="action-btn" title="مشاركة"><i class="fas fa-share-alt"></i></button>
+                        <button class="action-btn play-btn" title="استماع" data-audio="auth-azkar/audio2.mp3">
+                <i class="fas fa-volume-up"></i>
+            </button>
+                        <button class="action-btn details-btn" title="التفاصيل"><i class="fas fa-info-circle"></i></button>
+                    </div>
+                    <div class="card-counter">
+                        <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                        <span class="counter-value">0</span>
+                        <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بطاقة ذكر 3 -->
+            <div class="adhkar-card fade-in delay-3" data-index="2">
+                <div class="card-header">
+                    <span class="card-category category-sahih">صحيح</span>
+                  
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">دعاء دخول المسجد</h3>
+                    <p class="card-text">اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ.</p>
+                    <div class="card-source">
+                        <i class="fas fa-book"></i>
+                        <span>رواه مسلم في صحيحه (713)</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-actions">
+                        <button class="action-btn" title="نسخ"><i class="fas fa-copy"></i></button>
+                        <button class="action-btn" title="مشاركة"><i class="fas fa-share-alt"></i></button>
+                        <button class="action-btn play-btn" title="استماع" data-audio="auth-azkar/audio3.mp3">
+                <i class="fas fa-volume-up"></i>
+            </button>
+                        <button class="action-btn details-btn" title="التفاصيل"><i class="fas fa-info-circle"></i></button>
+                    </div>
+                    <div class="card-counter">
+                        <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                        <span class="counter-value">0</span>
+                        <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بطاقة ذكر 4 -->
+            <div class="adhkar-card fade-in delay-4" data-index="3">
+                <div class="card-header">
+                    <span class="card-category category-sahih">صحيح</span>
+                  
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">دعاء الخروج من المسجد</h3>
+                    <p class="card-text">اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ.</p>
+                    <div class="card-source">
+                        <i class="fas fa-book"></i>
+                        <span>رواه مسلم في صحيحه (714)</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-actions">
+                        <button class="action-btn" title="نسخ"><i class="fas fa-copy"></i></button>
+                        <button class="action-btn" title="مشاركة"><i class="fas fa-share-alt"></i></button>
+                        <button class="action-btn play-btn" title="استماع" data-audio="auth-azkar/audio4.mp3">
+                <i class="fas fa-volume-up"></i>
+            </button>
+                        <button class="action-btn details-btn" title="التفاصيل"><i class="fas fa-info-circle"></i></button>
+                    </div>
+                    <div class="card-counter">
+                        <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                        <span class="counter-value">0</span>
+                        <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بطاقة ذكر 5 -->
+            <div class="adhkar-card fade-in delay-5" data-index="4">
+                <div class="card-header">
+                    <span class="card-category category-hasan">حسن</span>
+                 
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">ذكر عند سماع الأذان</h3>
+                    <p class="card-text">اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ، وَالصَّلَاةِ الْقَائِمَةِ، آتِ مُحَمَّدًا الْوَسِيلَةَ وَالْفَضِيلَةَ، وَابْعَثْهُ مَقَامًا مَحْمُودًا الَّذِي وَعَدْتَهُ.</p>
+                    <div class="card-source">
+                        <i class="fas fa-book"></i>
+                        <span>رواه البخاري في صحيحه (614)</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-actions">
+                        <button class="action-btn" title="نسخ"><i class="fas fa-copy"></i></button>
+                        <button class="action-btn" title="مشاركة"><i class="fas fa-share-alt"></i></button>
+                        <button class="action-btn play-btn" title="استماع" data-audio="auth-azkar/audio5.mp3">
+                <i class="fas fa-volume-up"></i>
+            </button>
+                        <button class="action-btn details-btn" title="التفاصيل"><i class="fas fa-info-circle"></i></button>
+                    </div>
+                    <div class="card-counter">
+                        <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                        <span class="counter-value">0</span>
+                        <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بطاقة ذكر 6 -->
+            <div class="adhkar-card fade-in delay-1" data-index="5">
+                <div class="card-header">
+                    <span class="card-category category-sahih">صحيح</span>
+                   
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">أذكار بعد الصلاة</h3>
+                    <p class="card-text">أَسْتَغْفِرُ اللَّهَ (ثلاثًا) اللَّهُمَّ أَنْتَ السَّلَامُ، وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ.</p>
+                    <div class="card-source">
+                        <i class="fas fa-book"></i>
+                        <span>رواه مسلم في صحيحه (591)</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-actions">
+                        <button class="action-btn" title="نسخ"><i class="fas fa-copy"></i></button>
+                        <button class="action-btn" title="مشاركة"><i class="fas fa-share-alt"></i></button>
+                       <button class="action-btn play-btn" title="استماع" data-audio="auth-azkar/audio6.mp3">
+                <i class="fas fa-volume-up"></i>
+            </button>
+                        <button class="action-btn details-btn" title="التفاصيل"><i class="fas fa-info-circle"></i></button>
+                    </div>
+                    <div class="card-counter">
+                        <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                        <span class="counter-value">0</span>
+                        <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بطاقة ذكر 7 -->
+            <div class="adhkar-card fade-in delay-2" data-index="6">
+                <div class="card-header">
+                    <span class="card-category category-daeef">ضعيف</span>
+                    
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">دعاء قضاء الدين</h3>
+                    <p class="card-text">اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ.</p>
+                    <div class="card-source">
+                        <i class="fas fa-book"></i>
+                        <span>رواه الترمذي في سننه (3563) وحسنه الألباني</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-actions">
+                        <button class="action-btn" title="نسخ"><i class="fas fa-copy"></i></button>
+                        <button class="action-btn" title="مشاركة"><i class="fas fa-share-alt"></i></button>
+                     <button class="action-btn play-btn" title="استماع" data-audio="auth-azkar/audio7.mp3">
+                <i class="fas fa-volume-up"></i>
+            </button>
+                        <button class="action-btn details-btn" title="التفاصيل"><i class="fas fa-info-circle"></i></button>
+                    </div>
+                    <div class="card-counter">
+                        <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                        <span class="counter-value">0</span>
+                        <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بطاقة ذكر 8 -->
+            <div class="adhkar-card fade-in delay-3" data-index="7">
+                <div class="card-header">
+                    <span class="card-category category-sahih">صحيح</span>
+                  
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">ذكر الصباح والمساء</h3>
+                    <p class="card-text">لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.</p>
+                    <div class="card-source">
+                        <i class="fas fa-book"></i>
+                        <span>متفق عليه: البخاري (3293) ومسلم (2691)</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-actions">
+                        <button class="action-btn" title="نسخ"><i class="fas fa-copy"></i></button>
+                        <button class="action-btn" title="مشاركة"><i class="fas fa-share-alt"></i></button>
+                      <button class="action-btn play-btn" title="استماع" data-audio="auth-azkar/audio8.mp3">
+                <i class="fas fa-volume-up"></i>
+            </button>
+                        <button class="action-btn details-btn" title="التفاصيل"><i class="fas fa-info-circle"></i></button>
+                    </div>
+                    <div class="card-counter">
+                        <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                        <span class="counter-value">0</span>
+                        <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المصادر -->
+    <section class="sources-section fade-in">
+        <h2 class="section-title">مصادر الأذكار</h2>
+        <div class="sources-grid">
+            <div class="source-card">
+                <div class="source-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3 class="source-title">صحيح البخاري</h3>
+                <p class="source-count">150 ذكر</p>
+                <a href="#" class="source-btn">عرض الأذكار</a>
+            </div>
+            
+            <div class="source-card">
+                <div class="source-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3 class="source-title">صحيح مسلم</h3>
+                <p class="source-count">120 ذكر</p>
+                <a href="#" class="source-btn">عرض الأذكار</a>
+            </div>
+            
+            <div class="source-card">
+                <div class="source-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3 class="source-title">سنن الترمذي</h3>
+                <p class="source-count">80 ذكر</p>
+                <a href="#" class="source-btn">عرض الأذكار</a>
+            </div>
+            
+            <div class="source-card">
+                <div class="source-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3 class="source-title">سنن أبي داود</h3>
+                <p class="source-count">70 ذكر</p>
+                <a href="#" class="source-btn">عرض الأذكار</a>
+            </div>
+            
+            <div class="source-card">
+                <div class="source-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3 class="source-title">سنن النسائي</h3>
+                <p class="source-count">60 ذكر</p>
+                <a href="#" class="source-btn">عرض الأذكار</a>
+            </div>
+            
+            <div class="source-card">
+                <div class="source-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3 class="source-title">سنن ابن ماجه</h3>
+                <p class="source-count">50 ذكر</p>
+                <a href="#" class="source-btn">عرض الأذكار</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الاستماع -->
+<section class="audio-section fade-in">
+    <h2 class="section-title">استمع إلى الأذكار</h2>
+    <div class="audio-container">
+        
+        <!-- بطاقة أذكار الصباح -->
+        <div class="audio-card">
+            <div class="audio-header">
+                <div class="audio-overlay"></div>
+                <span class="audio-category">أذكار الصباح</span>
+            </div>
+            <div class="audio-content">
+                <h3 class="audio-title">أذكار الصباح</h3>
+                <audio controls class="audio-player">
+                    <source src="auth-azkar/morning_azkar.mp3" type="audio/mpeg">
+                    متصفحك لا يدعم تشغيل الصوت
+                </audio>
+                <!-- رابط لتحميل الملف الصوتي مع إخفاء الخط تحت الرابط -->
+                <a href="auth-azkar/morning_azkar.mp3" download class="audio-btn" style="text-decoration: none;">
+                    <i class="fas fa-download"></i> تحميل الملف الصوتي
+                </a>
+            </div>
+        </div>
+
+        <!-- بطاقة أذكار المساء -->
+        <div class="audio-card">
+            <div class="audio-header">
+                <div class="audio-overlay"></div>
+                <span class="audio-category">أذكار المساء</span>
+            </div>
+            <div class="audio-content">
+                <h3 class="audio-title">أذكار المساء</h3>
+                <audio controls class="audio-player">
+                    <source src="auth-azkar/evening_azkar.mp3" type="audio/mpeg">
+                    متصفحك لا يدعم تشغيل الصوت
+                </audio>
+                <!-- رابط لتحميل الملف الصوتي مع إخفاء الخط تحت الرابط -->
+                <a href="auth-azkar/evening_azkar.mp3" download class="audio-btn" style="text-decoration: none;">
+                    <i class="fas fa-download"></i> تحميل الملف الصوتي
+                </a>
+            </div>
+        </div>
+
+        <!-- بطاقة أذكار النوم -->
+        <div class="audio-card">
+            <div class="audio-header">
+                <div class="audio-overlay"></div>
+                <span class="audio-category">أذكار النوم</span>
+            </div>
+            <div class="audio-content">
+                <h3 class="audio-title">أذكار النوم</h3>
+                <audio controls class="audio-player">
+                    <source src="auth-azkar/sleep_azkar.mp3" type="audio/mpeg">
+                    متصفحك لا يدعم تشغيل الصوت
+                </audio>
+                <!-- رابط لتحميل الملف الصوتي مع إخفاء الخط تحت الرابط -->
+                <a href="auth-azkar/sleep_azkar.mp3" download class="audio-btn" style="text-decoration: none;">
+                    <i class="fas fa-download"></i> تحميل الملف الصوتي
+                </a>
+            </div>
+        </div>
+
+        <!-- بطاقة أذكار السفر -->
+        <div class="audio-card">
+            <div class="audio-header">
+                <div class="audio-overlay"></div>
+                <span class="audio-category">أذكار السفر</span>
+            </div>
+            <div class="audio-content">
+                <h3 class="audio-title">أذكار السفر</h3>
+                <audio controls class="audio-player">
+                    <source src="auth-azkar/travel_azkar.mp3" type="audio/mpeg">
+                    متصفحك لا يدعم تشغيل الصوت
+                </audio>
+                <!-- رابط لتحميل الملف الصوتي مع إخفاء الخط تحت الرابط -->
+                <a href="auth-azkar/travel_azkar.mp3" download class="audio-btn" style="text-decoration: none;">
+                    <i class="fas fa-download"></i> تحميل الملف الصوتي
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">
+                    <i class="fas fa-moon"></i> موقع الأذكار
+                </a>
+                <p>موقع متخصص في جمع الأذكار والأدعية المأثورة عن النبي صلى الله عليه وسلم، مصنفة حسب المناسبات والأوقات، لتكون عونًا للمسلم في حياته اليومية.</p>
+                
+            </div>
+            
+           <div class="footer-links-container">
+    <h3 class="footer-title">روابط سريعة</h3>
+    <ul class="footer-links">
+        <li><a href="index.html"><i class="fas fa-chevron-left"></i> الصفحة الرئيسية</a></li>
+        <li><a href="azkar.html"><i class="fas fa-chevron-left"></i> أذكار الصباح والمساء</a></li>
+        <li><a href="daily-duas.html"><i class="fas fa-chevron-left"></i> الأدعية اليومية</a></li>
+        <li><a href="occasion-duas.html"><i class="fas fa-chevron-left"></i> أدعية خاصة بالمناسبات</a></li>
+        <li><a href="auth-azkar.html"><i class="fas fa-chevron-left"></i> الأذكار المأثورة</a></li>
+    </ul>
+</div>
+
+            
+            <div class="footer-links-container">
+                <h3 class="footer-title">أقسام الموقع</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> أذكار الصباح</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> أذكار المساء</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> أذكار النوم</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> أذكار الصلاة</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> أذكار عامة</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3 class="footer-title">تواصل معنا</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-envelope"></i>ttyy5468@gmail.com</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> +967 770375454</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> اليمن /إب</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>جميع الحقوق محفوظة &copy; 2025 موقع درر الذكر والتسبيح</p>
+
+        </div>
+    </footer>
+
+    <!-- زر العودة للأعلى -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- المودال لعرض التفاصيل -->
+<!-- مودال عرض التفاصيل -->
+<div class="modal" id="detailsModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title" id="modalTitle">العنوان</h2>
+            <button class="modal-close" id="modalClose">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p class="modal-text" id="modalText">نص الذكر هنا...</p>
+            <div class="modal-info">
+                <div class="info-item"><i class="fas fa-book"></i> المصدر: <span id="modalSource">...</span></div>
+                <div class="info-item"><i class="fas fa-check-circle"></i> الدرجة: <span id="modalGrade">...</span></div>
+                <div class="info-item"><i class="fas fa-hashtag"></i> رقم الحديث: <span id="modalNumber">...</span></div>
+                <div class="info-item"><i class="fas fa-user"></i> الراوي: <span id="modalNarrator">...</span></div>
+                <div class="info-item"><i class="fas fa-info-circle"></i> معلومات إضافية: <span id="modalAdditionalInfo">...</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<audio id="audioPlayer" preload="auto"></audio>
+
+    <script>
+        // تبديل الوضع المظلم/المضيء
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('themeToggle');
+            
+            body.classList.toggle('dark-mode');
+            
+            // تغيير أيقونة الزر
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        
+        // فتح/إغلاق القائمة في الهواتف
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+        
+        // زر العودة للأعلى
+        function handleBackToTop() {
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // تبديل عرض البطاقات (شبكة/قائمة)
+        function toggleView() {
+            const gridViewBtn = document.getElementById('gridViewBtn');
+            const listViewBtn = document.getElementById('listViewBtn');
+            const adhkarContainer = document.getElementById('adhkarContainer');
+            
+            gridViewBtn.addEventListener('click', () => {
+                adhkarContainer.classList.remove('list-view');
+                gridViewBtn.classList.add('active');
+                listViewBtn.classList.remove('active');
+                localStorage.setItem('view', 'grid');
+            });
+            
+            listViewBtn.addEventListener('click', () => {
+                adhkarContainer.classList.add('list-view');
+                listViewBtn.classList.add('active');
+                gridViewBtn.classList.remove('active');
+                localStorage.setItem('view', 'list');
+            });
+            
+            // استعادة الإعداد المحفوظ
+            const savedView = localStorage.getItem('view');
+            if (savedView === 'list') {
+                adhkarContainer.classList.add('list-view');
+                listViewBtn.classList.add('active');
+                gridViewBtn.classList.remove('active');
+            }
+        }
+        
+        // تفعيل عداد الأذكار
+        function setupCounters() {
+            const counters = document.querySelectorAll('.card-counter');
+            
+            counters.forEach(counter => {
+                const minusBtn = counter.querySelector('.minus');
+                const plusBtn = counter.querySelector('.plus');
+                const valueEl = counter.querySelector('.counter-value');
+                
+                let count = 0;
+                
+                minusBtn.addEventListener('click', () => {
+                    if (count > 0) {
+                        count--;
+                        valueEl.textContent = count;
+                    }
+                });
+                
+                plusBtn.addEventListener('click', () => {
+                    count++;
+                    valueEl.textContent = count;
+                    
+                    // تأثير بصري عند الضغط
+                    valueEl.classList.add('highlight');
+                    setTimeout(() => {
+                        valueEl.classList.remove('highlight');
+                    }, 300);
+                });
+            });
+        }
+        
+        // تفعيل زر المفضلة
+        function setupBookmarks() {
+            const bookmarkBtns = document.querySelectorAll('.card-bookmark');
+            
+            bookmarkBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btn.classList.toggle('active');
+                    
+                    if (btn.classList.contains('active')) {
+                        btn.innerHTML = '<i class="fas fa-bookmark"></i>';
+                    } else {
+                        btn.innerHTML = '<i class="far fa-bookmark"></i>';
+                    }
+                });
+            });
+        }
+        
+        // تفعيل أزرار النسخ
+        function setupCopyButtons() {
+            const copyBtns = document.querySelectorAll('.action-btn[title="نسخ"]');
+            
+            copyBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const card = btn.closest('.adhkar-card');
+                    const text = card.querySelector('.card-text').textContent;
+                    
+                    navigator.clipboard.writeText(text).then(() => {
+                        // تأثير بصري للإشارة إلى النجاح
+                        btn.innerHTML = '<i class="fas fa-check"></i>';
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = '<i class="fas fa-copy"></i>';
+                        }, 2000);
+                    });
+                });
+            });
+        }
+        
+        // تفعيل مودال التفاصيل
+        function setupModal() {
+            const detailBtns = document.querySelectorAll('.action-btn[title="التفاصيل"]');
+            const modal = document.getElementById('detailsModal');
+            const modalClose = document.getElementById('modalClose');
+            
+            detailBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    modal.classList.add('active');
+                });
+            });
+            
+            modalClose.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+            
+            // إغلاق المودال عند النقر خارجه
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        }
+        
+        // تفعيل أزرار الفلتر
+        function setupFilters() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // إزالة الفلتر النشط السابق
+                    document.querySelector('.filter-btn.active').classList.remove('active');
+                    // تفعيل الفلتر الجديد
+                    btn.classList.add('active');
+                    
+                    // يمكن إضافة منطق الفلترة هنا
+                });
+            });
+        }
+        
+        // استعادة الوضع (مظلم/مضيء) من التخزين المحلي
+        function restoreTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggle = document.getElementById('themeToggle');
+            
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        }
+        
+        // تنفيذ الوظائف عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            restoreTheme();
+            handleBackToTop();
+            toggleView();
+            setupCounters();
+            setupBookmarks();
+            setupCopyButtons();
+            setupModal();
+            setupFilters();
+            
+            // إضافة مستمعي الأحداث
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+            document.getElementById('menuToggle').addEventListener('click', toggleMenu);
+            
+            // تأثيرات إضافية للبطاقات
+            const cards = document.querySelectorAll('.adhkar-card, .source-card, .audio-card');
+            
+            // تفعيل تحريك البطاقات عند التمرير
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                cards.forEach(el => {
+                    observer.observe(el);
+                });
+            }
+        });
+        
+        
+        
+        
+        // محتوى كل بطاقة (تأكد من إضافة كافة البطاقات هنا)
+const detailsData = [
+    {
+        title: "سيد الاستغفار",
+        text: "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ.",
+        source: "صحيح البخاري",
+        grade: "صحيح",
+        number: "6306",
+        narrator: "شداد بن أوس",
+        additionalInfo: "قال النبي صلى الله عليه وسلم: ..."
+    },
+    {
+        title: "ذكر عند الاستيقاظ من النوم",
+        text: "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ.",
+        source: "صحيح البخاري",
+        grade: "صحيح",
+        number: "6312",
+        narrator: "شداد بن أوس",
+        additionalInfo: "قال النبي صلى الله عليه وسلم: ..."
+    },
+    {
+        title: "دعاء دخول المسجد",
+        text: "اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ.",
+        source: "صحيح مسلم",
+        grade: "صحيح",
+        number: "713",
+        narrator: "أنس بن مالك",
+        additionalInfo: "قال النبي صلى الله عليه وسلم: ..."
+    },
+    {
+        title: "دعاء الخروج من المسجد",
+        text: "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ.",
+        source: "صحيح مسلم",
+        grade: "صحيح",
+        number: "714",
+        narrator: "أنس بن مالك",
+        additionalInfo: "قال النبي صلى الله عليه وسلم: ..."
+    },
+    {
+        title: "ذكر عند سماع الأذان",
+        text: "اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ، وَالصَّلَاةِ الْقَائِمَةِ، آتِ مُحَمَّدًا الْوَسِيلَةَ وَالْفَضِيلَةَ، وَابْعَثْهُ مَقَامًا مَحْمُودًا الَّذِي وَعَدْتَهُ.",
+        source: "صحيح البخاري",
+        grade: "صحيح",
+        number: "614",
+        narrator: "عبد الله بن عمر",
+        additionalInfo: "قال النبي صلى الله عليه وسلم: ..."
+    },
+    {
+        title: "أذكار بعد الصلاة",
+        text: "أَسْتَغْفِرُ اللَّهَ (ثلاثًا) اللَّهُمَّ أَنْتَ السَّلَامُ، وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ.",
+        source: "صحيح مسلم",
+        grade: "صحيح",
+        number: "591",
+        narrator: "أبو هريرة",
+        additionalInfo: "قال النبي صلى الله عليه وسلم: ..."
+    },
+    {
+        title: "دعاء قضاء الدين",
+        text: "اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ.",
+        source: "رواه الترمذي",
+        grade: "ضعيف",
+        number: "3563",
+        narrator: "أنس بن مالك",
+        additionalInfo: "قال النبي صلى الله عليه وسلم: ..."
+    },
+    {
+        title: "ذكر الصباح والمساء",
+        text: "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.",
+        source: "متفق عليه: البخاري (3293) ومسلم (2691)",
+        grade: "صحيح",
+        number: "3293, 2691",
+        narrator: "أبو هريرة",
+        additionalInfo: "قال النبي صلى الله عليه وسلم: ..."
+    }
+];
+
+
+const detailButtons = document.querySelectorAll('.details-btn');
+const modal = document.getElementById('detailsModal');
+const modalTitle = document.getElementById('modalTitle');
+const modalText = document.getElementById('modalText');
+const modalSource = document.getElementById('modalSource');
+const modalGrade = document.getElementById('modalGrade');
+const modalNumber = document.getElementById('modalNumber');
+const modalNarrator = document.getElementById('modalNarrator');
+const modalAdditionalInfo = document.getElementById('modalAdditionalInfo');
+const modalClose = document.getElementById('modalClose');
+
+// فتح المودال عند الضغط على زر التفاصيل
+detailButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        const index = event.target.closest('.adhkar-card').getAttribute('data-index'); // الحصول على البيانات من السمة data-index
+        const data = detailsData[index]; // الحصول على بيانات البطاقة
+        modalTitle.innerText = data.title;
+        modalText.innerText = data.text;
+        modalSource.innerText = `المصدر: ${data.source}`;
+        modalGrade.innerText = `الدرجة: ${data.grade}`;
+        modalNumber.innerText = `رقم الحديث: ${data.number}`;
+        modalNarrator.innerText = `الراوي: ${data.narrator}`;
+        modalAdditionalInfo.innerText = `معلومات إضافية: ${data.additionalInfo}`;
+        modal.style.display = 'block';
+    });
+});
+
+// إغلاق المودال عند الضغط على زر الإغلاق
+modalClose.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+    </script>
+    <script>
+    document.querySelectorAll('.play-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            var audioPlayer = document.getElementById('audioPlayer');
+            var audioFile = this.getAttribute('data-audio');
+            var icon = this.querySelector('i');  // الحصول على الأيقونة داخل الزر
+            
+            // إذا كان الصوت يشغل بالفعل
+            if (audioPlayer.src.includes(audioFile) && !audioPlayer.paused) {
+                audioPlayer.pause();  // إيقاف الصوت
+                audioPlayer.currentTime = 0;  // إعادة الصوت إلى البداية
+                
+                // تغيير الأيقونة إلى أيقونة موقوفة
+                icon.classList.remove('fa-volume-up');
+                icon.classList.add('fa-volume-mute');
+            } else {
+                audioPlayer.src = audioFile;  // تعيين مصدر الصوت
+                audioPlayer.play();  // تشغيل الصوت
+                
+                // تغيير الأيقونة إلى أيقونة صوت قيد التشغيل
+                icon.classList.remove('fa-volume-mute');
+                icon.classList.add('fa-volume-up');
+            }
+        });
+    });
+</script>
+<script>
+    // نسخ النص إلى الحافظة
+    document.querySelectorAll('.action-btn[title="نسخ"]').forEach(button => {
+        button.addEventListener('click', function() {
+            // الحصول على النص من البطاقة
+            const text = this.closest('.adhkar-card').querySelector('.card-text').textContent;
+            
+            // نسخ النص إلى الحافظة
+            navigator.clipboard.writeText(text).then(() => {
+                alert("تم نسخ النص إلى الحافظة");
+            }).catch(err => {
+                console.error('فشل النسخ: ', err);
+            });
+        });
+    });
+
+    // مشاركة المحتوى
+    document.querySelectorAll('.action-btn[title="مشاركة"]').forEach(button => {
+        button.addEventListener('click', function() {
+            const text = this.closest('.adhkar-card').querySelector('.card-text').textContent;
+            const title = this.closest('.adhkar-card').querySelector('.card-title').textContent;
+            
+            // التحقق إذا كان المتصفح يدعم المشاركة
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    text: text,
+                    url: window.location.href
+                }).then(() => {
+                    console.log('تمت المشاركة بنجاح');
+                }).catch(err => {
+                    console.error('فشل المشاركة: ', err);
+                });
+            } else {
+                alert('متصفحك لا يدعم ميزة المشاركة هذه');
+            }
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
+
+
+
+

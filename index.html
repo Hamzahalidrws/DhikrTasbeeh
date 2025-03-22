@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درر الذكر والتسبيح</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+        /* تعريف خط Scheherazade New */
+@font-face {
+  font-family: 'Scheherazade New';
+  src: url('assets/fonts/ScheherazadeNew-Regular.ttf') format('truetype'),
+       url('assets/fonts/ScheherazadeNew-Medium.ttf') format('truetype'),
+       url('assets/fonts/ScheherazadeNew-Bold.ttf') format('truetype'),
+       url('assets/fonts/ScheherazadeNew-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* تعريف خط Amiri */
+@font-face {
+  font-family: 'Amiri';
+  src: url('assets/fonts/Amiri-Regular.ttf') format('truetype'),
+       url('assets/fonts/Amiri-Bold.ttf') format('truetype'),
+       url('assets/fonts/Amiri-Italic.ttf') format('truetype'),
+       url('assets/fonts/Amiri-BoldItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* تعريف خط Aref Ruqaa */
+@font-face {
+  font-family: 'Aref Ruqaa';
+  src: url('assets/fonts/ArefRuqaa-Regular.ttf') format('truetype'),
+       url('assets/fonts/ArefRuqaa-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* تعريف خط Reem Kufi */
+@font-face {
+  font-family: 'Reem Kufi';
+  src: url('assets/fonts/ReemKufi-VariableFont_wght.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-Bold.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-Medium.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-Regular.ttf') format('truetype'),
+       url('assets/fonts/ReemKufi-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+        :root {
+            --primary-color: #2C3E50;
+            --secondary-color: #34495E;
+            --background-color: #F5F6FA;
+            --accent-color: #16A085;
+            --text-color: #2C3E50;
+            --card-bg: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #ECF0F1;
+            --secondary-color: #BDC3C7;
+            --background-color: #1A1A2E;
+            --accent-color: #2ECC71;
+            --text-color: #ECF0F1;
+            --card-bg: #2C3E50;
+            --shadow-color: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Amiri', serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .islamic-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zM22.343 0L13.857 8.485 15.272 9.9l7.9-7.9h-2.83zM32 0l-3.657 3.657 1.414 1.414L33.514 1.414 32 0zm-10.343 0L13.857 8.485 15.272 9.9l7.9-7.9h-2.83zM32 0l1.414 1.414 3.657-3.657L32 0zm21.314 0l-8.485 8.485 1.415 1.414 7.9-7.9h-2.83zM52.627 0l1.415 1.414 3.657-3.657L52.627 0z' fill='currentColor' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        nav {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            box-shadow: 0 2px 10px var(--shadow-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .nav-links a.active {
+            color: var(--accent-color);
+            background-color: var(--shadow-color);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 3px;
+            animation: activeLink 0.3s ease-in-out;
+        }
+
+        @keyframes activeLink {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+            to {
+                width: 30px;
+                opacity: 1;
+            }
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+            background-color: var(--shadow-color);
+            transform: translateY(-2px);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(45deg);
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-bottom: 3rem;
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.2s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, var(--shadow-color));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            position: relative;
+        }
+
+        .card p {
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .prayer-dhikr-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 3rem;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.prayer-dhikr-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.dhikr-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+}
+
+.dhikr-button:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.dhikr-button i {
+    transition: transform 0.3s ease;
+}
+
+.dhikr-button:hover i {
+    transform: scale(1.2);
+}
+
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                background-color: var(--card-bg);
+                padding: 1rem;
+                box-shadow: 0 2px 10px var(--shadow-color);
+            }
+
+            .nav-links a.active::after {
+                bottom: 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="islamic-pattern"></div>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">درر الذكر والتسبيح</a>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+<div class="nav-links">
+    <a href="index.html" class="active">الصفحة الرئيسية</a>
+    <a href="azkar.html">أذكار الصباح والمساء</a>
+    <a href="daily-duas.html">الأدعية اليومية</a>
+    <a href="occasion-duas.html">أدعية المناسبات</a>
+    <a href="auth-azkar.html">الأذكار المأثورة</a>
+    <a href="listen-azkar.html">استماع الأذكار</a>
+</div>
+
+            <button class="theme-toggle" aria-label="تبديل الوضع المظلم">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero" data-aos="fade-up">
+            <h1>درر الذكر والتسبيح</h1>
+            <p>موقع إسلامي يهدف إلى نشر الأذكار والأدعية المأثورة عن النبي ﷺ، لتكون عونًا للمسلم في حياته اليومية وتقربه إلى الله تعالى.</p>
+        </section>
+
+        <div class="cards-container">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <h3>أذكار الصباح والمساء</h3>
+                <p>مجموعة من الأذكار المأثورة التي يستحب قولها في الصباح والمساء، محفوظة بالأسانيد الصحيحة.</p>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <h3>الأدعية اليومية</h3>
+                <p>أدعية مختارة لمختلف المواقف والمناسبات اليومية، مع شرح فضائلها وآدابها.</p>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-delay="300">
+                <h3>فضل الذكر</h3>
+                <p>الذكر من أفضل العبادات وأحبها إلى الله تعالى، وهو سبب لطمأنينة القلوب وراحة النفوس.</p>
+            </div>
+        </div>
+
+       <div class="prayer-dhikr-card" data-aos="fade-up" style="background-color: #e1f5fe;">
+    <h3 style="color: #0288d1;">اذكار الصباح والمساء</h3>
+    <a href="azkar.html" style="text-decoration: none;">
+        <button class="dhikr-button" style="background-color: #0288d1; color: white;">
+            اذكار الصباح والمساء
+        </button>
+    </a>
+</div>
+
+<div class="prayer-dhikr-card" data-aos="fade-up" style="background-color: #fff9c4;">
+    <h3 style="color: #fbc02d;">الادعية اليومية</h3>
+    <a href="daily-duas.html" style="text-decoration: none;">
+        <button class="dhikr-button" style="background-color: #fbc02d; color: white;">
+            الادعية اليومية
+        </button>
+    </a>
+</div>
+
+<div class="prayer-dhikr-card" data-aos="fade-up" style="background-color: #ffecb3;">
+    <h3 style="color: #f57c00;">ادعية خاصة بالمناسبات</h3>
+    <a href="occasion-duas.html" style="text-decoration: none;">
+        <button class="dhikr-button" style="background-color: #f57c00; color: white;">
+            ادعية المناسبات
+        </button>
+    </a>
+</div>
+
+<div class="prayer-dhikr-card" data-aos="fade-up" style="background-color: #f3e5f5;">
+    <h3 style="color: #8e24aa;">الأذكار المأثورة</h3>
+    <a href="auth-azkar.html" style="text-decoration: none;">
+        <button class="dhikr-button" style="background-color: #8e24aa; color: white;">
+            الأذكار المأثورة
+        </button>
+    </a>
+</div>
+
+<div class="prayer-dhikr-card" data-aos="fade-up" style="background-color: #bbdefb;">
+    <h3 style="color: #1e88e5;">استماع الاذكار</h3>
+    <a href="listen-azkar.html" style="text-decoration: none;">
+        <button class="dhikr-button" style="background-color: #1e88e5; color: white;">
+            استماع الأذكار
+        </button>
+    </a>
+</div>
+
+
+
+
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script>
+        // تهيئة مكتبة AOS للتأثيرات الحركية
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // تبديل الوضع المظلم
+        const themeToggle = document.querySelector('.theme-toggle');
+        const icon = themeToggle.querySelector('i');
+
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.setAttribute('data-theme',
+                document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+            );
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        });
+
+        // القائمة المتجاوبة للموبايل
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // التعامل مع الروابط النشطة
+        const links = document.querySelectorAll('.nav-links a');
+        
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                links.forEach(l => l.classList.remove('active'));
+                e.target.classList.add('active');
+            });
+        });
+
+        // مشغل الصوت
+        const sound = new Howl({
+            src: ['path/to/your/audio.mp3'],
+            html5: true
+        });
+
+        const playButton = document.querySelector('.play-button');
+        playButton.addEventListener('click', () => {
+            if (!sound.playing()) {
+                sound.play();
+                playButton.querySelector('i').classList.replace('fa-play', 'fa-pause');
+            } else {
+                sound.pause();
+                playButton.querySelector('i').classList.replace('fa-pause', 'fa-play');
+            }
+        });
+
+        // إغلاق القائمة المتجاوبة عند النقر خارجها
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-container')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
